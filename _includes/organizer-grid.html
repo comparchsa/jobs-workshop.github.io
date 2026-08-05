@@ -1,0 +1,18 @@
+{%- comment -%}
+Renders every entry in _data/organizers.yml as a grid of cards.
+Used on the home page and on /organizers/, so the markup lives in one place.
+{%- endcomment -%}
+<ul class="people-grid">
+  {%- for p in site.data.organizers %}
+  <li class="person-card">
+    {% include avatar.html person=p %}
+    {%- if p.url and p.url != "" %}
+    <a class="person-name" href="{{ p.url }}">{{ p.name }}</a>
+    {%- else %}
+    <span class="person-name">{{ p.name }}</span>
+    {%- endif %}
+    <span class="person-affil">{{ p.affiliation }}</span>
+    {%- if p.role and p.role != "" %}<span class="role-tag">{{ p.role }}</span>{% endif %}
+  </li>
+  {%- endfor %}
+</ul>

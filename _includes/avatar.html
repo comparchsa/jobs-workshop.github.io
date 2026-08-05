@@ -1,0 +1,37 @@
+{%- comment -%}
+Renders one person's photo, or a lettered circle if they have none.
+
+  {% include avatar.html person=p %}
+
+Order of preference:
+  1. `photo:`     — an image path
+  2. `initials:`  — an explicit short string, for entries that are not people
+                    (e.g. "CASA" for the steering group)
+  3. the initials derived from `name:`
+  4. a dashed empty circle when the name is literally "TBD"
+
+Decorative in every case: the name is always rendered as text alongside, so
+the image carries an empty alt and the lettered circle is aria-hidden. That
+stops screen readers announcing the same name twice.
+{%- endcomment -%}
+{%- assign p = include.person -%}
+{%- assign name_upper = p.name | upcase -%}
+{%- if p.photo and p.photo != "" -%}
+<img class="avatar" src="{{ p.photo | relative_url }}" alt="" loading="lazy" width="84" height="84">
+{%- elsif name_upper == "TBD" -%}
+<span class="avatar avatar-tbd" aria-hidden="true"></span>
+{%- else -%}
+{%- if p.initials and p.initials != "" -%}
+  {%- assign letters = p.initials -%}
+{%- else -%}
+  {%- assign parts = p.name | split: " " -%}
+  {%- assign derived = "" -%}
+  {%- for part in parts -%}
+    {%- assign first_char = part | slice: 0 -%}
+    {%- unless first_char == "(" -%}{%- assign derived = derived | append: first_char -%}{%- endunless -%}
+  {%- endfor -%}
+  {%- assign letters = derived | slice: 0, 2 -%}
+{%- endif -%}
+{%- assign letter_count = letters | size -%}
+<span class="avatar avatar-initials{% if letter_count > 2 %} avatar-initials--long{% endif %}" aria-hidden="true">{{ letters }}</span>
+{%- endif -%}

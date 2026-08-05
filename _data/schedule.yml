@@ -1,0 +1,87 @@
+# ---------------------------------------------------------------------------
+# The workshop schedule. Rendered as a timeline on /schedule/ and as a
+# condensed list on the home page.
+#
+# Every field is optional except `title`, so this file works at any stage of
+# planning — a bare list of titles now, full details later.
+#
+#   start / end  – "HH:MM" strings, shown as typed. Leave both out and the
+#                  slot renders without a time.
+#   kind         – panel | talk | break | session   (controls the colour tag)
+#   title        – required
+#   description  – optional paragraph under the title
+#   people       – optional list of participants:
+#                    name         required
+#                    affiliation  optional
+#                    url          optional homepage
+#                    role         optional, e.g. "Moderator"
+#                    photo        optional, e.g. /assets/img/speakers/name.jpg
+#                                 square images work best; without one the site
+#                                 draws a circle with the person's initials
+#
+# Reordering entries reorders the page. There is nothing else to update.
+# ---------------------------------------------------------------------------
+
+- start: "08:00"
+  end: "08:15"
+  kind: session
+  title: Welcome and introductions
+  description: >-
+    An overview of the morning and of how the workshop is organized.
+
+- start: "08:15"
+  end: "09:00"
+  kind: panel
+  title: "Panel: Research careers in industry and academia"
+  description: >-
+    Senior researchers compare industry research, product engineering, and
+    academic research: what the work involves day to day, and how the paths
+    differ over the course of a career.
+  people:
+    - name: TBD
+      affiliation: Industry research
+    - name: TBD
+      affiliation: Academia
+    - name: TBD
+      affiliation: Industry product
+
+- start: "09:00"
+  end: "10:00"
+  kind: panel
+  title: "Panel: Tips from the trenches"
+  description: >-
+    Recent graduates on the mechanics of the search — application materials,
+    job talks, interviews, and offer negotiation.
+  people:
+    - name: TBD
+      affiliation: Recently hired, academia
+    - name: TBD
+      affiliation: Recently hired, industry research
+    - name: TBD
+      affiliation: Recently hired, industry
+
+- start: "10:00"
+  end: "10:30"
+  kind: break
+  title: Coffee break
+  description: >-
+    The MICRO-59 workshop coffee break. Panelists and attending hiring managers
+    stay in the room.
+
+- start: "10:30"
+  end: "11:30"
+  kind: talk
+  title: "Talk: The hiring committee's perspective"
+  description: >-
+    How faculty searches and industry research hires are evaluated and decided.
+  people:
+    - name: TBD
+      affiliation: TBD
+
+- start: "11:30"
+  end: "12:00"
+  kind: session
+  title: Career mapping and peer discussion
+  description: >-
+    A closing session in which attendees map out their own timelines and
+    compare notes with others on the same schedule.

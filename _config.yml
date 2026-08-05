@@ -1,6 +1,44 @@
-title: ArchChat Social Hour
-logo: /assets/img/logo.jpg
-description:
-show_downloads: true
-google_analytics: G-946LMGMJE1
-theme: jekyll-theme-minimal
+# ---------------------------------------------------------------------------
+# Site-wide settings. Change these once per workshop edition.
+# After editing this file you MUST restart `bundle exec jekyll serve`;
+# _config.yml is the one file Jekyll does not hot-reload.
+# ---------------------------------------------------------------------------
+
+title: JOBS Workshop 2026
+tagline: A workshop to help recent PhD graduates
+description: >-
+  The JOBS Workshop helps senior PhD students and postdocs in computer
+  architecture navigate the academic and industrial job market. Half-day
+  workshop co-located with MICRO-59 in Athens, Greece.
+
+# Where the site is published.
+#   url     = scheme + host, no trailing slash
+#   baseurl = the sub-path, with a leading slash and no trailing slash
+#             (set baseurl to "" if you later move to a custom domain)
+url: https://comparchsa.github.io
+baseurl: /jobs-workshop.github.io
+
+# Used for link previews on Slack/Twitter/etc. Drop a 1200x630 PNG at this
+# path when you have one; until then the SVG logo is used.
+image: /assets/img/logo.svg
+
+lang: en-US
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Nothing below here normally needs touching.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - vendor
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page

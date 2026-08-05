@@ -1,0 +1,38 @@
+# ---------------------------------------------------------------------------
+# Organizing committee, in the order they should appear on the site.
+#
+# Each entry:
+#   name         – required
+#   affiliation  – required
+#   role         – optional, e.g. "General Chair"; shown as a small tag
+#   url          – optional homepage
+#   photo        – optional path under /assets/img/organizers/
+#                  If omitted, the site draws a circle with the initials.
+#   initials     – optional override for that circle, for entries that are not
+#                  a person (e.g. "CASA" rather than "CS")
+# ---------------------------------------------------------------------------
+
+- name: Mariam Elgamal
+  affiliation: Harvard University
+  url: https://mariamelgamal.com/
+
+- name: Shashank Nag
+  affiliation: The University of Texas at Austin
+  url: https://shashanknag.github.io/
+
+- name: Ryan Wong
+  affiliation: University of Illinois Urbana-Champaign
+  url: https://rwong.cs.illinois.edu/
+
+- name: Alenkruth Krishnan Murali
+  affiliation: University of Virginia
+  url: https://alenkruth.com/
+
+- name: Abdulrahman Mahmoud
+  affiliation: MBZUAI
+  url: https://ma3mool.github.io/
+
+- name: CASA Steering Group
+  affiliation: Computer Architecture Student Association
+  url: https://www.comparchsa.org
+  initials: CASA

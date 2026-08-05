@@ -1,0 +1,51 @@
+{%- assign w = site.data.workshop -%}
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about">
+      <h2 class="footer-title">{{ w.name }} {{ w.edition }}</h2>
+      <p>{{ w.date_human }} &middot; {{ w.time_human }}<br>
+         {{ w.venue_name }}, {{ w.city }}</p>
+      <p>Co-located with <a href="{{ w.conference_url }}">{{ w.conference_name }}</a>.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Site</h3>
+      <ul>
+        {%- for item in site.data.navigation -%}
+        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Elsewhere</h3>
+      <ul>
+        <li><a href="{{ w.conference_url }}">{{ w.conference_name }}</a></li>
+        <li><a href="{{ w.organizing_body_url }}">CASA</a></li>
+        <li><a href="{{ w.code_of_conduct_url }}">Code of conduct</a></li>
+        {%- if w.contact_email and w.contact_email != "" -%}
+        <li><a href="mailto:{{ w.contact_email }}">Email the organizers</a></li>
+        {%- endif -%}
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-base">
+    <p class="footer-org">
+      {%- comment -%}
+      Decorative: the CASA link immediately follows in text, and two adjacent
+      links to the same destination are noise for screen-reader users.
+      {%- endcomment -%}
+      <img src="{{ '/assets/img/casa-logo.jpg' | relative_url }}" alt="" class="footer-org-logo" loading="lazy">
+      <span>
+        Organized by the <a href="{{ w.organizing_body_url }}">{{ w.organizing_body }}</a>.
+        All attendees are expected to follow the
+        <a href="{{ w.code_of_conduct_url }}">SIGARCH CARES</a> policies.
+      </span>
+    </p>
+    <p class="footer-colophon">
+      Built with Jekyll and hosted on GitHub Pages.
+      <a href="https://github.com/comparchsa/jobs-workshop.github.io">Source</a>.
+    </p>
+  </div>
+</footer>

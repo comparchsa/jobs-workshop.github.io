@@ -1,101 +1,319 @@
-# A Thank You to PLTea
+# JOBS Workshop website
 
-ArchChat is using this modified Jekyll & GitHub Page source code provided by Rachit & the gang at [PLTea](https://github.com/pltea/pltea.github.io). This will help us get the site running quickly, because thankfully we don't need much. Thanks once again, Rachit et al.
+Source for the JOBS Workshop site — a half-day workshop for computer
+architecture PhD students and postdocs going on the job market, co-located with
+MICRO. Listed by MICRO-59 as *JOBS — Accelerating Your Job Search*.
 
-Elba
+**Live site:** <https://comparchsa.github.io/jobs-workshop.github.io/>
 
-==================================================================================
+A plain [Jekyll](https://jekyllrb.com/) site built by GitHub Pages. No npm, no
+theme gem, no build step in CI — just Liquid templates, YAML, and one CSS file.
+Push to `master` and the site rebuilds in a minute or two.
 
-# The Minimal theme
+All maintenance documentation lives in this file. The site itself contains no
+instructions for editing it.
 
-[![Build Status](https://travis-ci.org/pages-themes/minimal.svg?branch=master)](https://travis-ci.org/pages-themes/minimal) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-minimal.svg)](https://badge.fury.io/rb/jekyll-theme-minimal)
+---
 
-*Minimal is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/minimal), or even [use it today](#usage).*
+## The one thing to know
 
-![Thumbnail of minimal](thumbnail.png)
+**Almost every edit you will ever make is to a file in [`_data/`](_data/).**
 
-## Usage
+The pages read from those YAML files and render whatever is in them. You should
+rarely need to touch a `.html` or `.md` file to change content.
 
-To use the Minimal theme:
+| Want to change… | Edit this |
+|---|---|
+| Dates, times, venue, application link, deadlines | [`_data/workshop.yml`](_data/workshop.yml) |
+| The schedule, its speakers and panelists | [`_data/schedule.yml`](_data/schedule.yml) |
+| The organizing committee | [`_data/organizers.yml`](_data/organizers.yml) |
+| The selected job candidates | [`_data/candidates.yml`](_data/candidates.yml) |
+| The tabs in the top nav | [`_data/navigation.yml`](_data/navigation.yml) |
+| The archive of previous years | [`_data/past_editions.yml`](_data/past_editions.yml) |
+| Site title, description, URL | [`_config.yml`](_config.yml) |
 
-1. Add the following to your site's `_config.yml`:
+Every one of those files opens with a comment block explaining its fields.
 
-    ```yml
-    theme: jekyll-theme-minimal
-    ```
+---
 
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+## Things to fill in before publishing
 
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
+The site is complete but a few values are placeholders:
 
+- **`contact_email`** in `_data/workshop.yml` is a guess
+  (`jobs-workshop@comparchsa.org`). Replace it with the address the organizers
+  actually monitor — it is the only contact route on the site.
+- **`submission.url`** is empty. Paste the HotCRP URL when the site is live.
+- **`important_dates`** are all `TBD` except the workshop date itself.
+- **Schedule speakers** are all `TBD`.
+- **`venue_room`** is `TBD` until MICRO assigns it.
 
+---
 
-## Customizing
+## Common tasks
 
-### Configuration variables
+### Turn on the job-candidate application
 
-Minimal will respect the following variables, if set in your site's `_config.yml`:
+Applications run through HotCRP. In [`_data/workshop.yml`](_data/workshop.yml):
 
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
+```yaml
+submission:
+  label: "Apply as a job candidate"
+  url: "https://jobs2026.hotcrp.com/"
+  hotcrp_name: "jobs2026.hotcrp.com"
 ```
 
-Additionally, you may choose to set the following optional variables:
+While `url` is empty the button renders as a greyed-out "opens soon" chip
+instead of a dead link, so it is always safe to ship the page before HotCRP
+exists. Fill in the matching deadlines under `important_dates` at the same time.
 
-```yml
-logo: [Location of the logo]
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
+### Publish the selected candidates
+
+After selection, add a block per candidate to
+[`_data/candidates.yml`](_data/candidates.yml):
+
+```yaml
+- name: Ada Lovelace
+  affiliation: University of Virginia
+  seeking: Academia          # free text; shown as a tag
+  cv: https://example.org/ada-cv.pdf
+  website: https://example.org/ada                     # optional
+  research: Analytical engines and compiler design.    # optional, one line
 ```
 
-### Stylesheet
+Commit and push. The table on `/candidates/` picks it up automatically. While
+the list is empty the page shows a "not published yet" panel rather than an
+empty table.
 
-If you'd like to add your own custom styles:
+### Confirm a speaker or panelist
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
+In [`_data/schedule.yml`](_data/schedule.yml), replace the `TBD` entry:
 
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+```yaml
+  people:
+    - name: Jane Researcher
+      affiliation: NVIDIA
+      url: https://example.org/jane                 # optional
+      role: Moderator                               # optional
+      photo: /assets/img/speakers/jane-researcher.jpg   # optional
+```
 
-### Layouts
+**Photos.** Drop square images (400×400 or larger is plenty) into
+`assets/img/speakers/` and point `photo:` at them. Anyone without a photo gets
+a circle with their initials, so a partly-confirmed panel still looks
+deliberate — you can add photos one at a time as people send them.
 
-If you'd like to change the theme's HTML layout:
+### Change the schedule itself
 
-1. [Copy the original template](https://github.com/pages-themes/minimal/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
+Every field in `_data/schedule.yml` is optional except `title`, so the file
+works at any stage of planning:
 
-## Roadmap
+```yaml
+# Times not settled yet — just list the sessions
+- kind: panel
+  title: "Panel: Research careers in industry and academia"
 
-See the [open issues](https://github.com/pages-themes/minimal/issues) for a list of proposed features (and known issues).
+# Times settled
+- start: "08:15"
+  end: "09:00"
+  kind: panel
+  title: "Panel: Research careers in industry and academia"
+```
 
-## Project philosophy
+A slot with no `start` renders without a time on `/schedule/` and shows "TBD" in
+the home-page summary. `kind` is one of `panel`, `talk`, `break`, or `session`
+and sets the word in the little chip above the title. Reordering entries
+reorders the page.
 
-The Minimal theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+The note above the schedule comes from `schedule_note` in
+[`_data/workshop.yml`](_data/workshop.yml); set it to `""` to hide it once the
+program is final.
 
-## Contributing
+### Update the organizing committee
 
-Interested in contributing to Minimal? We'd love your help. Minimal is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
+[`_data/organizers.yml`](_data/organizers.yml) — order in the file is order on
+the page. Photos work the same way as for speakers, in
+`assets/img/organizers/`. Entries that are not a person can set `initials:`
+to override the derived letters — the CASA Steering Group uses `initials: CASA`
+rather than the "CS" that would be derived from its name.
 
-### Previewing the theme locally
+### Add a page
 
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
+1. Create `newpage.md` at the repo root with front matter:
 
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/minimal`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+   ```yaml
+   ---
+   title: New Page
+   subtitle: One line under the heading.   # optional
+   permalink: /newpage/
+   ---
+   ```
 
-### Running tests
+   Note that front matter is not processed as Liquid — `{{ }}` in `title` or
+   `subtitle` will render literally.
 
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` one before the test script will work.
+2. Add it to [`_data/navigation.yml`](_data/navigation.yml) with a `url` that
+   matches the `permalink` exactly, slashes included.
+
+The `page` layout is applied automatically (see `defaults` in `_config.yml`), so
+you only write the body.
+
+---
+
+## Rolling the site over to the next edition
+
+Ten minutes of work, in this order:
+
+1. **Archive the edition that just ended.** Add an entry to the *top* of
+   [`_data/past_editions.yml`](_data/past_editions.yml) — year, conference,
+   date, location, a short summary, and the highlights.
+2. **Update [`_data/workshop.yml`](_data/workshop.yml)** — edition, dates,
+   venue, co-located conference and its URLs, important dates; reset
+   `submission.url` to `""` and restore `schedule_note`.
+3. **Reset [`_data/schedule.yml`](_data/schedule.yml)** to a skeleton with
+   `TBD` speakers.
+4. **Update [`_data/organizers.yml`](_data/organizers.yml)** for the new
+   committee.
+5. **Empty [`_data/candidates.yml`](_data/candidates.yml)** — keep the comment
+   header, delete the entries.
+6. **Update `title` in [`_config.yml`](_config.yml)** to the new year.
+
+Nothing else needs to change. The prose on the pages reads years, venues, and
+conference names out of `_data` rather than hard-coding them.
+
+---
+
+## Previewing locally
+
+```bash
+bundle install
+bundle exec jekyll serve --livereload
+# → http://127.0.0.1:4000/jobs-workshop.github.io/
+```
+
+Note the `/jobs-workshop.github.io/` suffix — that is the `baseurl`, and it is
+part of the local URL too.
+
+`_config.yml` is the only file Jekyll does not hot-reload; restart the server
+after editing it.
+
+If you would rather not install Ruby, editing YAML directly in the GitHub web UI
+is perfectly fine — GitHub Pages builds it and emails you if something breaks.
+
+---
+
+## Deployment and URLs
+
+Served from the `master` branch by GitHub Pages, under
+**Settings → Pages → Source: Deploy from a branch**.
+
+Because the repository lives under the `comparchsa` organization rather than a
+user or org literally named `jobs-workshop`, the published URL is a project
+page:
+
+```
+https://comparchsa.github.io/jobs-workshop.github.io/
+```
+
+which is why `_config.yml` sets:
+
+```yaml
+url:     https://comparchsa.github.io
+baseurl: /jobs-workshop.github.io
+```
+
+**Moving to a custom domain later** (e.g. `jobsworkshop.org`):
+
+1. Add a `CNAME` file at the repo root containing just the bare domain.
+2. Set `url:` to `https://jobsworkshop.org` and `baseurl:` to `""`.
+3. Point DNS at GitHub Pages and enable HTTPS in Settings → Pages.
+
+All internal links go through Jekyll's `relative_url` filter, so they follow
+`baseurl` automatically — you do not have to hunt through the templates.
+
+---
+
+## Layout of the repository
+
+```
+_config.yml            site-wide settings
+_data/                 ← all the content you actually edit
+_includes/
+  nav.html             top navigation bar
+  footer.html          footer
+  cta.html             the job-candidate application button
+  avatar.html          one person's photo, or their initials in a circle
+  organizer-grid.html  the committee card grid (used on 2 pages)
+_layouts/
+  default.html         html skeleton: head, nav, main, footer
+  page.html            default.html + the page title band
+index.html             home page (hero + sections)
+schedule.md            timeline rendered from _data/schedule.yml
+candidates.md          table rendered from _data/candidates.yml
+organizers.md          committee grid
+venue.md               venue, travel, accessibility
+participate.md         attend / apply / speak / sponsor
+past-editions.md       archive rendered from _data/past_editions.yml
+assets/css/style.css   every style on the site, one file, plain CSS
+assets/js/site.js      the mobile nav toggle — the only JS on the site
+```
+
+### Restyling
+
+The palette is [Tokyo Night Light](https://github.com/enkia/tokyo-night-vscode-theme),
+the VS Code theme. Surfaces and text come from the theme's own JSON; `--brand`
+and `--accent` are its link-blue and purple syntax colours.
+
+**The site is light-only, on purpose.** There is no
+`@media (prefers-color-scheme: dark)` block, and `html { color-scheme: light }`
+stops dark-mode browsers from auto-darkening scrollbars and form controls. If
+you add a dark block back, anyone whose OS is set to dark mode will stop seeing
+the light palette entirely — which is exactly the trap this note exists to
+prevent.
+
+All colours are CSS custom properties in the single `:root` at the top of
+[`assets/css/style.css`](assets/css/style.css). There are four surface levels:
+`--surface` (cards, tables, header), `--bg` (page canvas), `--bg-soft` (banded
+sections, page headers), and `--bg-sunken` (footer). `--text` and
+`--text-muted` are the two text tones.
+
+The palette is checked against WCAG 2.1 AA: every text/background pair is at
+least 4.5:1, and control outlines are at least 3:1. **If you change
+a colour, re-check it** — <https://webaim.org/resources/contrastchecker/> takes
+about ten seconds per pair.
+
+### Accessibility
+
+The site is built to WCAG 2.1 AA. What is already in place:
+
+- One `<h1>` per page and no skipped heading levels.
+- `<header>`, `<nav>`, `<main>`, `<footer>` landmarks, a skip-to-content link,
+  and `aria-current="page"` on the active tab.
+- Visible focus outlines on every interactive element; the mobile menu is a
+  real `<button>` with `aria-expanded` and closes on <kbd>Esc</kbd>.
+- Decorative images carry `alt=""`; the initials circles are `aria-hidden`, so
+  names are announced once, not twice.
+- Table headers use `scope`, and the candidate table has a caption.
+- Text sizes are in `rem`, so browser zoom and OS font-size settings work.
+- Wide content (the candidate table) scrolls inside its own box; the page body
+  never scrolls sideways, down to a 320px-wide screen.
+- Honours `prefers-reduced-motion` and
+  `forced-colors` (Windows High Contrast).
+- The site is fully readable with JavaScript disabled.
+
+**When adding content, the three things that break this most often:** an image
+without `alt`, a link whose text is "here" or "click here", and a heading level
+skipped for visual reasons. Style headings with CSS instead of picking a
+smaller tag.
+
+---
+
+## Credits
+
+Organized by [CASA](https://www.comparchsa.org), the Computer Architecture
+Student Association. All participants are expected to follow the
+[SIGARCH CARES](https://www.sigarch.org/benefit/cares/) policies.
+
+The original scaffolding came from the `pages-themes/minimal` Jekyll theme
+(CC0), by way of [PLTea](https://github.com/pltea/pltea.github.io) and the CASA
+ArchChat site — thanks to Rachit and everyone there. See [LICENSE](LICENSE).

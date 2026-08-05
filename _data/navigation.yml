@@ -1,0 +1,16 @@
+# Top navigation bar. Order here is the order on screen.
+# `url` must match the page's `permalink:` exactly (leading + trailing slash).
+- title: Home
+  url: /
+- title: Schedule
+  url: /schedule/
+- title: Job Candidates
+  url: /candidates/
+- title: Venue
+  url: /venue/
+- title: Organizers
+  url: /organizers/
+- title: Participate
+  url: /participate/
+- title: Past Editions
+  url: /past-editions/

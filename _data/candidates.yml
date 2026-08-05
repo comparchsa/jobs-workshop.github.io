@@ -1,0 +1,27 @@
+# ---------------------------------------------------------------------------
+# Job candidates selected for this edition.
+#
+# Candidates apply through HotCRP; the organizers select them and add the
+# accepted ones here. Paste a new block per candidate, commit, push.
+#
+# Each entry:
+#   name         – required
+#   affiliation  – required (university, lab, or company)
+#   seeking      – free text, e.g. "Academia", "Industry", "Industry / Postdoc",
+#                  "Research labs". Shown as a tag.
+#   cv           – optional URL. Omit and the cell shows "—".
+#   website      – optional personal homepage
+#   research     – optional one-line research summary
+#
+# While this list is empty the page shows a "not published yet" panel rather
+# than an empty table.
+# ---------------------------------------------------------------------------
+
+# Copy this shape for each accepted candidate:
+#
+# - name: Ada Lovelace
+#   affiliation: University of Virginia
+#   seeking: Academia
+#   cv: https://example.org/ada-cv.pdf
+#   website: https://example.org/ada
+#   research: Analytical engines, compiler design, and program semantics.

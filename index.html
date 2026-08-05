@@ -1,0 +1,151 @@
+---
+layout: default
+title: Home
+permalink: /
+---
+
+{% assign w = site.data.workshop %}
+
+<section class="hero">
+  <div class="wrap">
+    <p class="hero-badge">Co-located with {{ w.conference_name }} &middot; {{ w.city }}</p>
+
+    <h1>
+      <span class="hero-acronym">JOBS {{ w.edition }}</span>
+      Accelerating your job search
+    </h1>
+
+    <p class="hero-lede">
+      A half-day workshop for PhD students and postdocs in computer architecture
+      who are preparing to go on the job market, in academia or in industry.
+      Panels, a talk, and a coffee break for meeting the panelists and the
+      employers in the room.
+    </p>
+
+    <ul class="hero-facts">
+      <li>
+        <span class="fact-label">Date</span>
+        <span class="fact-value">{{ w.date_human }}</span>
+      </li>
+      <li>
+        <span class="fact-label">Time</span>
+        <span class="fact-value">{{ w.time_human }}</span>
+      </li>
+      <li>
+        <span class="fact-label">Venue</span>
+        <span class="fact-value">{{ w.venue_name }}</span>
+      </li>
+      <li>
+        <span class="fact-label">Cost</span>
+        <span class="fact-value">Included with {{ w.conference_name }} registration</span>
+      </li>
+    </ul>
+
+    {% include cta.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About the workshop</h2>
+      <p>
+        The workshop has two aims. The first is advice: panels and a talk on how
+        the academic and industrial job markets work, from people who have
+        recently been through them and from people who make hiring decisions.
+        The second is visibility: a set of job candidates, selected from
+        applications, who are listed on this site and introduced to employers
+        attending {{ w.conference_name }}.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Panels</h3>
+        <p>
+          Industry research, product engineering, and academic research
+          compared, and a second panel with recent graduates on application
+          materials, job talks, interviews, and negotiation.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Talk</h3>
+        <p>
+          How faculty searches and industry research hires are evaluated and
+          decided, from someone who has served on hiring committees.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Coffee break</h3>
+        <p>
+          Time set aside for candidates to meet the panelists and the hiring
+          managers attending the conference.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Schedule</h2>
+      <p>Full details, including speakers, are on the <a href="{{ '/schedule/' | relative_url }}">schedule page</a>.</p>
+    </div>
+
+    <div class="dates">
+      {%- for slot in site.data.schedule %}
+      <div class="dates-row">
+        <span class="dates-what">{{ slot.title }}</span>
+        <span class="dates-when">
+          {%- if slot.start and slot.start != "" -%}
+          {{ slot.start }}{% if slot.end and slot.end != "" %}&ndash;{{ slot.end }}{% endif %}
+          {%- else -%}TBD{%- endif -%}
+        </span>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Important dates</h2>
+    </div>
+
+    <div class="dates">
+      {%- for d in w.important_dates %}
+      <div class="dates-row">
+        <span class="dates-what">{{ d.what }}</span>
+        <span class="dates-when">{{ d.when }}</span>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Job candidates</h2>
+      <p>
+        Candidates apply through the workshop's submission site and are selected
+        by the organizers. Attending the workshop is not required in order to
+        apply.
+      </p>
+    </div>
+    {% include cta.html %}
+    <p><a href="{{ '/candidates/' | relative_url }}">Job candidates page</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Organizers</h2>
+    </div>
+
+    {% include organizer-grid.html %}
+  </div>
+</section>
