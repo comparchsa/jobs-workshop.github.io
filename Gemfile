@@ -11,7 +11,12 @@
 
 source 'https://rubygems.org'
 
-gem 'github-pages', group: :jekyll_plugins
+# gem 'github-pages', group: :jekyll_plugins
+gem 'jekyll', '~> 4.3'
+gem 'jekyll-seo-tag'
+gem 'jekyll-sitemap'
+gem 'webrick'
+gem 'bigdecimal'
 
 # Required on Ruby 3.0+ — these left the standard library.
 gem 'csv'

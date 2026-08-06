@@ -10,7 +10,9 @@
   url: /schedule/
 - title: Job Candidates
   url: /candidates/
-- title: Venue
+- title: Attend
   url: /venue/
 - title: Organizers
   url: /organizers/
+- title: Past Editions
+  url: /past-editions/

@@ -28,46 +28,47 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  /* --- Surfaces --------------------------------------------------------- */
-  --surface:      #eceef3;
-  --bg:           #e6e7ed;   /* theme's editor.background */
-  --bg-soft:      #dcdee5;
-  --bg-sunken:    #d6d8df;   /* theme's sideBar / statusBar background */
+  /* --- Surfaces (Premium Soft Light) ------------------------------------- */
+  --surface:      #ffffff;
+  --bg:           #f8fafc;   
+  --bg-soft:      #f1f5f9;
+  --bg-sunken:    #e2e8f0;   
 
   /* --- Text ------------------------------------------------------------- */
-  --text:         #343b59;   /* theme's editor.foreground — 8.88:1 on --bg */
-  --text-muted:   #575b6b;   /*                             5.46:1 on --bg */
+  --text:         #0f172a;   
+  --text-muted:   #475569;   
 
   /* --- Lines ------------------------------------------------------------ */
-  --border:       #c1c2c7;   /* theme's panel.border */
-  --border-strong:#74767f;   /* control outlines — 3.24:1 on --bg-soft */
+  --border:       #cbd5e1;   
+  --border-strong:#94a3b8;   
 
   /* --- Interactive ------------------------------------------------------ */
-  --brand:        #2959aa;   /* theme's textLink blue — 5.48:1 on --bg */
-  --brand-deep:   #204a8f;   /* hover state */
-  --brand-tint:   #d7deef;
-  --accent:       #65359d;   /* theme's purple — 6.68:1 on --bg */
-  --accent-tint:  #e2d9f0;
-  --on-brand:     #ffffff;   /* text on a --brand fill — 6.77:1 */
+  --brand:        #1e3a8a;   
+  --brand-deep:   #1e40af;   
+  --brand-tint:   #dbeafe;
+  --accent:       #0d9488;   
+  --accent-tint:  #ccfbf1;
+  --on-brand:     #ffffff;   
 
-  /* hero gradient stops: pale blue -> canvas -> pale purple */
-  --hero-a:       #dfe5f5;
-  --hero-b:       #e6e7ed;
-  --hero-c:       #e9dff5;
+  /* hero gradient stops */
+  --hero-a:       #dbeafe;
+  --hero-b:       #ccfbf1;
+  --hero-c:       #e0e7ff;
 
-  /* --- Session-kind chips (theme syntax colours) ------------------------- */
-  --chip-panel-bg:   #d9e0ef;  --chip-panel-fg:   #2959aa;  /* blue   */
-  --chip-talk-bg:    #e2d9f0;  --chip-talk-fg:    #65359d;  /* purple */
-  --chip-break-bg:   #dde7d2;  --chip-break-fg:   #385f0d;  /* green  */
-  --chip-session-bg: #f0e3d9;  --chip-session-fg: #8a4a22;  /* orange */
+  /* --- Session-kind chips ------------------------- */
+  --chip-panel-bg:   #dbeafe;  --chip-panel-fg:   #1e40af;  /* blue   */
+  --chip-talk-bg:    #ccfbf1;  --chip-talk-fg:    #0f766e;  /* teal */
+  --chip-break-bg:   #dcfce7;  --chip-break-fg:   #166534;  /* green  */
+  --chip-session-bg: #ffedd5;  --chip-session-fg: #9a3412;  /* orange */
 
   /* --- Shape ------------------------------------------------------------ */
-  --radius:    14px;
-  --radius-sm: 8px;
-  --shadow:    0 1px 2px rgba(52, 59, 89, .06), 0 10px 26px -18px rgba(52, 59, 89, .45);
+  --radius:    16px;
+  --radius-sm: 10px;
+  --shadow:    0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
   --wrap:      1120px;
 
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
@@ -157,8 +158,10 @@ code {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
 }
 
 .nav-bar {
@@ -261,10 +264,17 @@ code {
 
 .hero {
   position: relative;
-  background:
-    linear-gradient(168deg, var(--hero-a) 0%, var(--hero-b) 50%, var(--hero-c) 100%);
+  background: linear-gradient(135deg, var(--hero-a), var(--hero-b), var(--hero-c), var(--hero-a));
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
   border-bottom: 1px solid var(--border);
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2rem, 5vw, 3.5rem);
+  padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .hero-badge {
@@ -348,6 +358,12 @@ code {
   font-size: .97rem;
   text-decoration: none;
   border: 1px solid transparent;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .btn-primary {
@@ -423,8 +439,15 @@ code {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.4rem;
+  padding: 1.6rem;
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--brand-tint);
 }
 
 .card h3 { margin-bottom: .4rem; }
@@ -503,8 +526,15 @@ code {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.15rem 1.3rem;
+  padding: 1.35rem 1.5rem;
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.slot-body:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--brand-tint);
 }
 
 /* h2 for correct document outline; sized like a card heading. */
@@ -581,9 +611,16 @@ code {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.35rem 1.15rem;
+  padding: 1.5rem 1.15rem;
   text-align: center;
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.person-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--brand-tint);
 }
 
 .person-card .person-name { display: block; font-size: 1rem; }
@@ -750,10 +787,17 @@ tbody tr:hover { background: var(--bg-soft); }
 .edition {
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.4rem;
+  padding: 1.6rem;
   background: var(--surface);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.edition:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--brand-tint);
 }
 
 .edition h2 { margin-top: 0; }

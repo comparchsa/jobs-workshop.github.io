@@ -22,7 +22,7 @@ a requirement for applying, and applying is not a requirement for attending.
 
 {% include cta.html %}
 
-## Selected candidates
+## Selected Candidates
 
 {% if candidate_count > 0 %}
 {%- comment -%}
@@ -64,26 +64,25 @@ focusable, so it is announced rather than landed on silently.
 </div>
 {% else %}
 <div class="empty-state">
-  <h3>Not published yet</h3>
+  <h3>Not Published Yet</h3>
   <p>Selected candidates will be listed here after the application deadline.</p>
 </div>
 {% endif %}
 
-## Attending the workshop
+## Attending the Workshop
 
 The workshop is open to all {{ w.conference_name }} registrants and is included
-in conference registration. There is no separate workshop fee and no RSVP —
-turn up on the day. See [Venue]({{ '/venue/' | relative_url }}) for the room,
+in workshops and tutorials registration at MICRO. There is no separate workshop fee. Please indicate your interest in attending the JOBS workshop on the Whova registration form. See [Venue]({{ '/venue/' | relative_url }}) for the room,
 travel, and registration details.
 
-## Corrections and removals
+## Corrections and Removals
 
 To correct or remove an entry, contact the organizers at
 {% include contact.html %}. Removal requests are honoured without questions.
 
-## For employers
+## For Employers
 
 The candidate list stays online after the conference, and the CV links go
 directly to the candidates. If you are recruiting and attending MICRO-59, the
-coffee break at 10:00 is the point in the
+Coffee Break at 10:00 is the point in the
 [schedule]({{ '/schedule/' | relative_url }}) set aside for meeting candidates.

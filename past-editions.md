@@ -12,7 +12,13 @@ permalink: /past-editions/
 {% if past_count > 0 %}
 {%- for e in site.data.past_editions %}
 <article class="edition">
-  <h2>{{ site.data.workshop.name }} {{ e.year }}</h2>
+  <h2>
+    {% if e.url and e.url != "" %}
+      <a href="{{ e.url }}">{{ site.data.workshop.name }} {{ e.year }}</a>
+    {% else %}
+      {{ site.data.workshop.name }} {{ e.year }}
+    {% endif %}
+  </h2>
   <div class="edition-meta">
     <span>{{ e.conference }}</span>
     <span>{{ e.date }}</span>
@@ -29,14 +35,12 @@ permalink: /past-editions/
     {%- endfor %}
   </ul>
   {%- endif %}
-  {%- if e.url and e.url != "" %}
-  <p class="mb-0"><a href="{{ e.url }}">{{ e.year }} workshop site</a></p>
-  {%- endif %}
+
 </article>
 {%- endfor %}
 {% else %}
 <div class="empty-state">
-  <h3>This is the first edition</h3>
+  <h3>No past editions yet</h3>
   <p>Previous editions will be listed here as the workshop recurs.</p>
 </div>
 {% endif %}

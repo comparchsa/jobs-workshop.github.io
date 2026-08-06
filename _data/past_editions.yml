@@ -10,7 +10,7 @@
   location: Austin, Texas, USA
   url: https://sites.google.com/cornell.edu/jobs-workshop-2024/home
   summary: >-
-    The first edition: panels on research careers and on the mechanics of the
+    Panels on research careers and on the mechanics of the
     job search, a talk from a department chair's perspective, and a
     job-candidate listing of eleven graduating students.
   highlights:
@@ -18,3 +18,23 @@
     - "Panel: Tips from the Trenches"
     - "Talk: Department Chair Perspective — Diana Marculescu (UT Austin)"
     - "Blueprint for Success: Career Mapping and Peer Insights"
+
+- year: "2022"
+  conference: MICRO-55
+  date: "October 1, 2022"
+  location: Chicago, Illinois, USA
+  url: https://sites.google.com/cornell.edu/jobs-micro-2022/home?authuser=0
+  summary: >-
+    Panels on industry research, product roles, and academic paths, along with networking coffee breaks.
+  highlights:
+    - "Panel: Tips from the Trenches"
+
+- year: "2020"
+  conference: MICRO-53
+  date: "October 18, 2020"
+  location: Virtual
+  url: https://jobs.eecs.umich.edu/
+  summary: >-
+    Virtual workshop featuring panels on academic job search tips and strategies, and research pitch competitions.
+  highlights:
+    - "Panel: Academic Job Search: Tips & Strategies"

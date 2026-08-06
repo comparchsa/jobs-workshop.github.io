@@ -16,7 +16,7 @@ permalink: /organizers/
 Questions about the program, the job-candidate application, or accessibility:
 {% include contact.html %}
 
-## Speaking on a panel
+## Speaking on a Panel
 
 Panelists are drawn from three groups:
 
@@ -29,7 +29,7 @@ To nominate someone, or yourself, contact the organizers at
 {% include contact.html %}. Self-nominations are read the same way as any
 other.
 
-## Code of conduct
+## Code of Conduct
 
 All participants are expected to follow the
 [SIGARCH CARES]({{ w.code_of_conduct_url }}) policies. Concerns can be raised

@@ -25,7 +25,7 @@
 - start: "08:00"
   end: "08:15"
   kind: session
-  title: Welcome and introductions
+  title: Welcome and Introductions
   description: >-
     An overview of the morning and of how the workshop is organized.
 
@@ -63,7 +63,7 @@
 - start: "10:00"
   end: "10:30"
   kind: break
-  title: Coffee break
+  title: Coffee Break
   description: >-
     The MICRO-59 workshop coffee break. Panelists and attending hiring managers
     stay in the room.
