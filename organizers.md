@@ -2,8 +2,8 @@
 title: Organizers
 subtitle: The organizing committee for this edition of the workshop.
 description: >-
-  The JOBS 2026 organizing committee, plus how to nominate a panelist, sponsor
-  the workshop, or raise a concern.
+  The JOBS 2026 organizing committee, plus how to nominate a panelist or raise
+  a concern.
 permalink: /organizers/
 ---
 
@@ -13,8 +13,8 @@ permalink: /organizers/
 
 ## Contact
 
-Questions about the program, the job-candidate application, accessibility, or
-sponsorship: [{{ w.contact_email }}](mailto:{{ w.contact_email }}).
+Questions about the program, the job-candidate application, or accessibility:
+{% include contact.html %}
 
 ## Speaking on a panel
 
@@ -25,15 +25,9 @@ Panelists are drawn from three groups:
 - People who have served on hiring committees, whether faculty searches or
   industry research hiring.
 
-To nominate someone, or yourself, email
-[{{ w.contact_email }}](mailto:{{ w.contact_email }}). Self-nominations are
-read the same way as any other.
-
-## Sponsorship
-
-Sponsorship covers the room and catering, and gives sponsors time with
-candidates during the workshop. For current tiers, email
-[{{ w.contact_email }}](mailto:{{ w.contact_email }}).
+To nominate someone, or yourself, contact the organizers at
+{% include contact.html %}. Self-nominations are read the same way as any
+other.
 
 ## Code of conduct
 

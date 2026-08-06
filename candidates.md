@@ -78,9 +78,8 @@ travel, and registration details.
 
 ## Corrections and removals
 
-To correct or remove an entry, email
-[{{ w.contact_email }}](mailto:{{ w.contact_email }}). Removal requests are
-honoured without questions.
+To correct or remove an entry, contact the organizers at
+{% include contact.html %}. Removal requests are honoured without questions.
 
 ## For employers
 

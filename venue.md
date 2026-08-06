@@ -66,6 +66,6 @@ or near the conference hotel the night before makes the morning easier.
 
 ## Accessibility and dietary requirements
 
-Email [{{ w.contact_email }}](mailto:{{ w.contact_email }}) with what you need.
+Contact the organizers at {% include contact.html %} with what you need.
 Requests made at least two weeks ahead are easiest to arrange, but ask even if
 you are later than that.

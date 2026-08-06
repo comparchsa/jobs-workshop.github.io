@@ -28,9 +28,12 @@
         <li><a href="{{ w.conference_url }}">{{ w.conference_name }}</a></li>
         <li><a href="{{ w.organizing_body_url }}">CASA</a></li>
         <li><a href="{{ w.code_of_conduct_url }}">Code of conduct</a></li>
-        {%- if w.contact_email and w.contact_email != "" -%}
-        <li><a href="mailto:{{ w.contact_email }}">Email the organizers</a></li>
-        {%- endif -%}
+        {%- comment -%}
+        No contact link here while `contact_email` is a placeholder — the
+        address appears in prose on the pages that need it, via
+        _includes/contact.html, which only becomes a mailto once a real
+        address is set.
+        {%- endcomment -%}
       </ul>
     </div>
   </div>

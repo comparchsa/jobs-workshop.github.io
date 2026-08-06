@@ -1,0 +1,16 @@
+{%- comment -%}
+Renders the organizers' contact address.
+
+While `contact_email` in _data/workshop.yml is still the literal
+`<placeholder>`, this prints it as escaped plain text — no mailto link, so the
+site never ships a working link to an address that does not exist.
+
+Put a real address in that field and every occurrence on the site turns into a
+mailto link on its own. The switch is "does the value contain an @".
+{%- endcomment -%}
+{%- assign addr = site.data.workshop.contact_email -%}
+{%- if addr contains "@" -%}
+<a href="mailto:{{ addr }}">{{ addr }}</a>
+{%- else -%}
+<span class="placeholder">{{ addr | escape }}</span>
+{%- endif -%}

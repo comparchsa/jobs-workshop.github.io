@@ -40,9 +40,11 @@ Every one of those files opens with a comment block explaining its fields.
 
 The site is complete but a few values are placeholders:
 
-- **`contact_email`** in `_data/workshop.yml` is a guess
-  (`jobs-workshop@comparchsa.org`). Replace it with the address the organizers
-  actually monitor — it is the only contact route on the site.
+- **`contact_email`** in `_data/workshop.yml` is the literal string
+  `<placeholder>`. Until it contains an `@`, the site prints it as plain text
+  in a dashed box rather than a mailto link, so no dead address is published.
+  Put the real address in and every occurrence becomes a working link on its
+  own — see [`_includes/contact.html`](_includes/contact.html).
 - **`submission.url`** is empty. Paste the HotCRP URL when the site is live.
 - **`important_dates`** are all `TBD` except the workshop date itself.
 - **Schedule speakers** are all `TBD`.
@@ -252,6 +254,7 @@ _includes/
   nav.html             top navigation bar
   footer.html          footer
   cta.html             the job-candidate application buttons
+  contact.html         the organizers' address, or the placeholder
   avatar.html          one person's photo, or their initials in a circle
   organizer-grid.html  the committee card grid (used on 2 pages)
 _layouts/
@@ -260,7 +263,7 @@ _layouts/
 index.html             home page (hero + sections)
 schedule.md            timeline rendered from _data/schedule.yml
 candidates.md          how to apply + table from _data/candidates.yml
-organizers.md          committee grid, panelist nominations, sponsorship
+organizers.md          committee grid, panelist nominations, contact
 venue.md               venue, travel, registration, accessibility
 past-editions.md       archive from _data/past_editions.yml (footer link only)
 404.html               shown for any unknown URL
