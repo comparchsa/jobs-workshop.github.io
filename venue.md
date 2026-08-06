@@ -1,13 +1,16 @@
 ---
 title: Venue
 subtitle: The workshop is held inside the MICRO-59 conference venue.
+description: >-
+  JOBS 2026 is held at the InterContinental Athenaeum Athens, inside the
+  MICRO-59 venue. Travel directions, registration, and accessibility.
 permalink: /venue/
 ---
 
 {% assign w = site.data.workshop %}
 
 <ul class="venue-facts">
-  <li><span class="fact-label">Date</span>{{ w.date_human }}</li>
+  <li><span class="fact-label">Date</span><time datetime="{{ w.date_iso }}">{{ w.date_human }}</time></li>
   <li><span class="fact-label">Time</span>{{ w.time_human }} ({{ w.timezone }})</li>
   <li><span class="fact-label">Venue</span>{{ w.venue_name }}</li>
   <li><span class="fact-label">Room</span>{{ w.venue_room }}</li>
@@ -44,13 +47,22 @@ See the MICRO-59 [travel information]({{ w.conference_url }}attend/travelinfo.ph
 and [getting around Athens]({{ w.conference_url }}attend/traveltips.php) pages
 for more detail.
 
-## Registration
+## Registration and attending
 
-The workshop is included with {{ w.conference_name }} registration; there is no
-separate workshop fee. Rates and deadlines are on the
+The workshop is open to all {{ w.conference_name }} registrants and is included
+in conference registration. There is no separate workshop fee and no RSVP —
+turn up on the day.
+
+It is aimed at senior PhD students and postdocs preparing for the job market;
+anyone else at the conference is welcome. Rates and deadlines are on the
 [MICRO-59 registration page]({{ w.conference_registration_url }}), and the
 conference hotel block is on the
 [venue and hotel page]({{ w.venue_info_url }}).
+
+Because the workshop starts at 8:00 AM on the first day of MICRO-59, staying at
+or near the conference hotel the night before makes the morning easier.
+
+<p><a href="{{ '/jobs-workshop-2026.ics' | relative_url }}" download>Add the workshop to your calendar</a></p>
 
 ## Accessibility and dietary requirements
 

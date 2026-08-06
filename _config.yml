@@ -18,11 +18,18 @@ description: >-
 url: https://comparchsa.github.io
 baseurl: /jobs-workshop.github.io
 
-# Used for link previews on Slack/Twitter/etc. Drop a 1200x630 PNG at this
-# path when you have one; until then the SVG logo is used.
-image: /assets/img/logo.svg
-
 lang: en-US
+
+# Link previews on Slack / Twitter / WhatsApp. jekyll-seo-tag only reads
+# `image` from a PAGE, not from here, so it is applied to every page via
+# `defaults` at the bottom of this file. Must be a raster image at roughly
+# 1200x630 — the social platforms will not render an SVG.
+twitter:
+  card: summary_large_image
+  # CASA's account, used for card attribution. Without a username here
+  # jekyll-seo-tag emits a bare "@" as twitter:site. Change or delete both
+  # lines if attribution should point somewhere else.
+  username: CompArchSA
 
 plugins:
   - jekyll-seo-tag
@@ -42,3 +49,4 @@ defaults:
       type: pages
     values:
       layout: page
+      image: /assets/img/social-card.png

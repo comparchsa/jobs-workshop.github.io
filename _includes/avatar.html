@@ -4,20 +4,62 @@ Renders one person's photo, or a lettered circle if they have none.
   {% include avatar.html person=p %}
 
 Order of preference:
-  1. `photo:`     — an image path
+  1. `photo:`     — either a path inside this repo ("/assets/img/...") or a
+                    full URL to somebody else's site ("https://...").
+                    Full URLs are emitted untouched; repo paths get `baseurl`
+                    prepended. Do not run an absolute URL through
+                    `relative_url` — Jekyll 3, which GitHub Pages uses, will
+                    happily glue the baseurl onto the front of it.
   2. `initials:`  — an explicit short string, for entries that are not people
                     (e.g. "CASA" for the steering group)
   3. the initials derived from `name:`
   4. a dashed empty circle when the name is literally "TBD"
 
+Framing a photo inside the circle (both optional):
+
+  photo_position: "center 15%"   where the crop sits. The second value is the
+                                 vertical anchor: 0% = top of the image,
+                                 100% = bottom. Lower it to pull a face down
+                                 into the circle, raise it to pull the face up.
+                                 Defaults to "center 20%", which suits most
+                                 head-and-shoulders portraits.
+  photo_zoom:     1.5            magnification, for wide shots where the face
+                                 would otherwise be tiny. 1 = no zoom.
+  photo_fit:      "contain"      use for a LOGO rather than a face. The image
+                                 is fitted whole inside the circle on a white
+                                 disc instead of being cropped to fill it, and
+                                 photo_position / photo_zoom are ignored.
+
+`transform-origin` is emitted to match `photo_position`, so zooming magnifies
+around the face rather than around the middle of the crop — without that the
+two settings fight each other.
+
 Decorative in every case: the name is always rendered as text alongside, so
 the image carries an empty alt and the lettered circle is aria-hidden. That
-stops screen readers announcing the same name twice.
+stops screen readers announcing the same name twice. A hotlinked photo that
+404s leaves the tinted circle from `.avatar`, not a broken-image icon.
 {%- endcomment -%}
 {%- assign p = include.person -%}
 {%- assign name_upper = p.name | upcase -%}
 {%- if p.photo and p.photo != "" -%}
-<img class="avatar" src="{{ p.photo | relative_url }}" alt="" loading="lazy" width="84" height="84">
+{%- assign scheme = p.photo | slice: 0, 4 | downcase -%}
+{%- if scheme == "http" -%}
+  {%- assign photo_src = p.photo -%}
+{%- else -%}
+  {%- assign photo_src = p.photo | relative_url -%}
+{%- endif -%}
+{%- if p.photo_fit == "contain" -%}
+<span class="avatar avatar-photo avatar-photo--contain">
+  <img src="{{ photo_src }}" alt="" loading="lazy" decoding="async">
+</span>
+{%- else -%}
+{%- assign photo_position = p.photo_position | default: "center 20%" -%}
+{%- assign photo_zoom = p.photo_zoom | default: 1 -%}
+<span class="avatar avatar-photo">
+  <img src="{{ photo_src }}" alt="" loading="lazy" decoding="async"
+       style="object-position: {{ photo_position }};{% unless photo_zoom == 1 %} transform: scale({{ photo_zoom }}); transform-origin: {{ photo_position }};{% endunless %}">
+</span>
+{%- endif -%}
 {%- elsif name_upper == "TBD" -%}
 <span class="avatar avatar-tbd" aria-hidden="true"></span>
 {%- else -%}

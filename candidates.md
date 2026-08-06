@@ -1,6 +1,10 @@
 ---
 title: Job Candidates
 subtitle: Students and postdocs presenting themselves to employers at MICRO-59.
+description: >-
+  How to apply as a JOBS 2026 job candidate, and the list of candidates
+  selected for this edition. Open to PhD students and postdocs in computer
+  architecture who are on the market.
 permalink: /candidates/
 ---
 
@@ -21,7 +25,14 @@ a requirement for applying, and applying is not a requirement for attending.
 ## Selected candidates
 
 {% if candidate_count > 0 %}
-<div class="table-scroll">
+{%- comment -%}
+tabindex="0" is what makes this scrollable box reachable with the keyboard —
+without it a keyboard-only visitor cannot scroll sideways to the CV column on
+a narrow screen. role="region" + aria-label give it a name once it is
+focusable, so it is announced rather than landed on silently.
+{%- endcomment -%}
+<div class="table-scroll" tabindex="0" role="region"
+     aria-label="Selected job candidates, scrollable table">
   <table>
     <caption class="visually-hidden">Selected job candidates for {{ w.name }} {{ w.edition }}</caption>
     <thead>
@@ -57,6 +68,13 @@ a requirement for applying, and applying is not a requirement for attending.
   <p>Selected candidates will be listed here after the application deadline.</p>
 </div>
 {% endif %}
+
+## Attending the workshop
+
+The workshop is open to all {{ w.conference_name }} registrants and is included
+in conference registration. There is no separate workshop fee and no RSVP —
+turn up on the day. See [Venue]({{ '/venue/' | relative_url }}) for the room,
+travel, and registration details.
 
 ## Corrections and removals
 

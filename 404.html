@@ -1,0 +1,23 @@
+---
+layout: page
+title: Page not found
+subtitle: That address does not match anything on this site.
+permalink: /404.html
+description: The page you were looking for does not exist on the JOBS Workshop site.
+sitemap: false
+---
+
+{% assign w = site.data.workshop %}
+
+<p>The link may be out of date, or the page may have moved between editions of
+the workshop. Everything on the site is one click away:</p>
+
+<ul>
+  {%- for item in site.data.navigation %}
+  <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+  {%- endfor %}
+  <li><a href="{{ '/past-editions/' | relative_url }}">Past Editions</a></li>
+</ul>
+
+<p>If you followed a link from somewhere else and it should work, tell us at
+<a href="mailto:{{ w.contact_email }}">{{ w.contact_email }}</a>.</p>

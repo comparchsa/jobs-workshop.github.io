@@ -1,0 +1,30 @@
+---
+permalink: /jobs-workshop-2026.ics
+layout: null
+sitemap: false
+---
+{%- comment -%}
+Commas and semicolons are field separators in iCalendar TEXT values and must be
+backslash-escaped, or clients truncate the value at the first one. Lines are
+kept short because long lines are supposed to be folded, which Liquid cannot
+do cleanly.
+{%- endcomment -%}
+{%- assign w = site.data.workshop -%}
+{%- assign summary = w.full_name | replace: ",", "\," | replace: ";", "\;" -%}
+{%- assign place = w.venue_name | append: ", " | append: w.city | replace: ",", "\," -%}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CASA//JOBS Workshop//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:{{ w.calendar.uid }}
+DTSTAMP:{{ w.calendar.start_utc }}
+DTSTART:{{ w.calendar.start_utc }}
+DTEND:{{ w.calendar.end_utc }}
+SUMMARY:{{ summary }} ({{ w.edition }})
+LOCATION:{{ place }}
+DESCRIPTION:Job search workshop for PhD students and postdocs.
+URL:{{ '/' | absolute_url }}
+END:VEVENT
+END:VCALENDAR

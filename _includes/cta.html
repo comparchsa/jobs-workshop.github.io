@@ -2,13 +2,20 @@
 The job-candidate application button, from _data/workshop.yml.
 While `submission.url` is empty it renders as a non-clickable chip, so the
 page never ships a dead link.
+
+  {% include cta.html %}                 apply + register
+  {% include cta.html schedule=true %}   apply + schedule + register
 {%- endcomment -%}
-{%- assign s = site.data.workshop.submission -%}
+{%- assign w = site.data.workshop -%}
+{%- assign s = w.submission -%}
 <div class="cta-row">
   {%- if s.url and s.url != "" -%}
     <a class="btn btn-primary" href="{{ s.url }}">{{ s.label }}</a>
   {%- else -%}
     <span class="btn btn-disabled">{{ s.label }} — opens soon</span>
   {%- endif -%}
-  <a class="btn btn-secondary" href="{{ site.data.workshop.conference_registration_url }}">Register for {{ site.data.workshop.conference_name }}</a>
+  {%- if include.schedule -%}
+    <a class="btn btn-secondary" href="{{ '/schedule/' | relative_url }}">See the schedule</a>
+  {%- endif -%}
+  <a class="btn btn-secondary" href="{{ w.conference_registration_url }}">Register for {{ w.conference_name }}</a>
 </div>

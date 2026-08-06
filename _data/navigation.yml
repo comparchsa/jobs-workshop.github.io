@@ -1,5 +1,9 @@
 # Top navigation bar. Order here is the order on screen.
 # `url` must match the page's `permalink:` exactly (leading + trailing slash).
+#
+# Kept deliberately short — five tabs is about the limit before a nav bar
+# stops being scannable. Lower-traffic pages (Past Editions) live in the
+# footer instead; see _includes/footer.html.
 - title: Home
   url: /
 - title: Schedule
@@ -10,7 +14,3 @@
   url: /venue/
 - title: Organizers
   url: /organizers/
-- title: Participate
-  url: /participate/
-- title: Past Editions
-  url: /past-editions/

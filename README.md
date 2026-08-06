@@ -8,7 +8,7 @@ MICRO. Listed by MICRO-59 as *JOBS — Accelerating Your Job Search*.
 
 A plain [Jekyll](https://jekyllrb.com/) site built by GitHub Pages. No npm, no
 theme gem, no build step in CI — just Liquid templates, YAML, and one CSS file.
-Push to `master` and the site rebuilds in a minute or two.
+Push to `main` and the site rebuilds in a minute or two.
 
 All maintenance documentation lives in this file. The site itself contains no
 instructions for editing it.
@@ -133,9 +133,15 @@ program is final.
 
 [`_data/organizers.yml`](_data/organizers.yml) — order in the file is order on
 the page. Photos work the same way as for speakers, in
-`assets/img/organizers/`. Entries that are not a person can set `initials:`
-to override the derived letters — the CASA Steering Group uses `initials: CASA`
-rather than the "CS" that would be derived from its name.
+`assets/img/organizers/`. Two extra options exist for the awkward cases:
+
+- `initials:` overrides the letters derived from the name, for entries that
+  are not a person ("CASA" rather than the "CS" that would be derived).
+- `photo_fit: contain` fits a **logo** whole inside the circle on a white disc,
+  instead of cropping it to fill like a face. The CASA Steering Group uses it.
+
+For faces, `photo_position` and `photo_zoom` control the framing — see the
+comment block at the top of [`_includes/avatar.html`](_includes/avatar.html).
 
 ### Add a page
 
@@ -177,6 +183,10 @@ Ten minutes of work, in this order:
 5. **Empty [`_data/candidates.yml`](_data/candidates.yml)** — keep the comment
    header, delete the entries.
 6. **Update `title` in [`_config.yml`](_config.yml)** to the new year.
+7. **Update the `calendar:` block** in `_data/workshop.yml` — the `.ics` times
+   are UTC and do not derive themselves from the dates above.
+8. **Regenerate `assets/img/social-card.png`** (1200x630) so link previews show
+   the right year.
 
 Nothing else needs to change. The prose on the pages reads years, venues, and
 conference names out of `_data` rather than hard-coding them.
@@ -204,7 +214,7 @@ is perfectly fine — GitHub Pages builds it and emails you if something breaks.
 
 ## Deployment and URLs
 
-Served from the `master` branch by GitHub Pages, under
+Served from the `main` branch by GitHub Pages, under
 **Settings → Pages → Source: Deploy from a branch**.
 
 Because the repository lives under the `comparchsa` organization rather than a
@@ -241,7 +251,7 @@ _data/                 ← all the content you actually edit
 _includes/
   nav.html             top navigation bar
   footer.html          footer
-  cta.html             the job-candidate application button
+  cta.html             the job-candidate application buttons
   avatar.html          one person's photo, or their initials in a circle
   organizer-grid.html  the committee card grid (used on 2 pages)
 _layouts/
@@ -249,11 +259,13 @@ _layouts/
   page.html            default.html + the page title band
 index.html             home page (hero + sections)
 schedule.md            timeline rendered from _data/schedule.yml
-candidates.md          table rendered from _data/candidates.yml
-organizers.md          committee grid
-venue.md               venue, travel, accessibility
-participate.md         attend / apply / speak / sponsor
-past-editions.md       archive rendered from _data/past_editions.yml
+candidates.md          how to apply + table from _data/candidates.yml
+organizers.md          committee grid, panelist nominations, sponsorship
+venue.md               venue, travel, registration, accessibility
+past-editions.md       archive from _data/past_editions.yml (footer link only)
+404.html               shown for any unknown URL
+calendar.ics           generates /jobs-workshop-2026.ics from workshop.yml
+assets/img/social-card.png   1200x630 link preview image
 assets/css/style.css   every style on the site, one file, plain CSS
 assets/js/site.js      the mobile nav toggle — the only JS on the site
 ```
@@ -289,16 +301,21 @@ The site is built to WCAG 2.1 AA. What is already in place:
 - One `<h1>` per page and no skipped heading levels.
 - `<header>`, `<nav>`, `<main>`, `<footer>` landmarks, a skip-to-content link,
   and `aria-current="page"` on the active tab.
-- Visible focus outlines on every interactive element; the mobile menu is a
-  real `<button>` with `aria-expanded` and closes on <kbd>Esc</kbd>.
+- Visible focus outlines on every interactive element. The mobile menu is a
+  real `<button>` with `aria-expanded`; <kbd>Esc</kbd> closes it and returns
+  focus to the button rather than dropping focus to the top of the page.
+- The candidate table sits in a `tabindex="0"` `role="region"` box, so it can
+  be scrolled sideways with the keyboard on a narrow screen. **Keep those
+  attributes on any scrollable box you add** — without them the content is
+  unreachable without a mouse.
 - Decorative images carry `alt=""`; the initials circles are `aria-hidden`, so
   names are announced once, not twice.
 - Table headers use `scope`, and the candidate table has a caption.
+- Dates and session times are wrapped in `<time datetime="...">`.
 - Text sizes are in `rem`, so browser zoom and OS font-size settings work.
-- Wide content (the candidate table) scrolls inside its own box; the page body
-  never scrolls sideways, down to a 320px-wide screen.
-- Honours `prefers-reduced-motion` and
-  `forced-colors` (Windows High Contrast).
+- Wide content scrolls inside its own box; the page body never scrolls
+  sideways, down to a 320px-wide screen.
+- Honours `prefers-reduced-motion` and `forced-colors` (Windows High Contrast).
 - The site is fully readable with JavaScript disabled.
 
 **When adding content, the three things that break this most often:** an image

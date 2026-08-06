@@ -1,13 +1,18 @@
 ---
 title: Schedule
 subtitle: Talks, panels, and a coffee break, in the MICRO-59 morning workshop slot.
+description: >-
+  The JOBS 2026 programme — two panels on research careers and the mechanics
+  of the job search, a talk on how hiring decisions get made, and a networking
+  coffee break. 8:00 AM to 12:00 PM on Sunday 1 November 2026.
 permalink: /schedule/
 ---
 
 {% assign w = site.data.workshop %}
 
 <p class="text-muted">
-  {{ w.date_human }} &middot; {{ w.time_human }} ({{ w.timezone }})<br>
+  <time datetime="{{ w.date_iso }}">{{ w.date_human }}</time>
+  &middot; {{ w.time_human }} ({{ w.timezone }})<br>
   {{ w.venue_name }}, {{ w.city }} &middot; Room {{ w.venue_room }}
 </p>
 
@@ -22,7 +27,8 @@ permalink: /schedule/
   <li class="slot slot--{{ slot.kind | default: 'session' }}">
     <div class="slot-time">
       {%- if slot.start and slot.start != "" -%}
-      {{ slot.start }}{% if slot.end and slot.end != "" %}<span class="slot-end"><span class="visually-hidden"> to </span>{{ slot.end }}</span>{% endif %}
+      <time datetime="{{ w.date_iso }}T{{ slot.start }}">{{ slot.start }}</time>
+      {%- if slot.end and slot.end != "" %}<span class="slot-end"><span class="visually-hidden"> to </span><time datetime="{{ w.date_iso }}T{{ slot.end }}">{{ slot.end }}</time></span>{% endif %}
       {%- endif -%}
     </div>
     <div class="slot-body">

@@ -14,6 +14,11 @@
         {%- for item in site.data.navigation -%}
         <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
         {%- endfor -%}
+        {%- comment -%}
+        Not in the top nav — it is low-traffic and the nav is kept to five
+        tabs. It lives here so the page stays reachable.
+        {%- endcomment -%}
+        <li><a href="{{ '/past-editions/' | relative_url }}">Past Editions</a></li>
       </ul>
     </div>
 
@@ -36,7 +41,8 @@
       Decorative: the CASA link immediately follows in text, and two adjacent
       links to the same destination are noise for screen-reader users.
       {%- endcomment -%}
-      <img src="{{ '/assets/img/casa-logo.jpg' | relative_url }}" alt="" class="footer-org-logo" loading="lazy">
+      <img src="https://www.sigarch.org/wp-content/uploads/2021/02/CASA_logo_small.png"
+           alt="" class="footer-org-logo" loading="lazy" width="42" height="31">
       <span>
         Organized by the <a href="{{ w.organizing_body_url }}">{{ w.organizing_body }}</a>.
         All attendees are expected to follow the

@@ -66,6 +66,16 @@ important_dates:
   - what: "Workshop"
     when: "November 1, 2026"
 
+# --- Calendar file ----------------------------------------------------------
+# Generates /jobs-workshop-2026.ics for the "Add to calendar" link.
+# Times are UTC, so they need no timezone database. Athens is UTC+2 in
+# November (EET — summer time ends in late October), so 08:00 local = 06:00Z.
+# If you change the date or times above, change these to match.
+calendar:
+  start_utc: "20261101T060000Z"
+  end_utc: "20261101T100000Z"
+  uid: "jobs-workshop-2026@comparchsa.github.io"
+
 # --- Schedule note ----------------------------------------------------------
 # Shown above the schedule. Set to "" to hide it once the program is final.
 schedule_note: >-

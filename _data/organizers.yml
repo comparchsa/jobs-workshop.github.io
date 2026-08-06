@@ -6,33 +6,65 @@
 #   affiliation  – required
 #   role         – optional, e.g. "General Chair"; shown as a small tag
 #   url          – optional homepage
-#   photo        – optional path under /assets/img/organizers/
+#   photo        – optional. Either a path in this repo
+#                  ("/assets/img/organizers/name.jpg") or a full URL to an
+#                  image on someone else's site ("https://..."). Both work.
 #                  If omitted, the site draws a circle with the initials.
+#   photo_position – optional framing, default "center 20%". The second value
+#                  is the vertical anchor: 0% = top of the photo, 100% =
+#                  bottom. Lower it to pull the face down into the circle.
+#   photo_zoom   – optional magnification for wide shots, default 1.
+#   photo_fit    – set to "contain" for a logo instead of a face: the image is
+#                  fitted whole inside the circle on a white disc rather than
+#                  cropped to fill it.
 #   initials     – optional override for that circle, for entries that are not
 #                  a person (e.g. "CASA" rather than "CS")
+#
+# The photos below are hotlinked from each organizer's own homepage, so they
+# update automatically when that person updates their site. The trade-off is
+# that they break if someone renames or moves their file — the circle just
+# goes blank, nothing else is affected. Swap any entry for a local copy under
+# assets/img/organizers/ if that happens.
 # ---------------------------------------------------------------------------
 
 - name: Mariam Elgamal
   affiliation: Harvard University
   url: https://mariamelgamal.com/
+  photo: https://mariamelgamal.com/assets/img/prof_pic.jpg
+  photo_position: center 12%
+  photo_zoom: 1.2
 
 - name: Shashank Nag
   affiliation: The University of Texas at Austin
   url: https://shashanknag.github.io/
+  photo: https://shashanknag.github.io/images/profile.png
+  photo_position: center 25%
+  photo_zoom: 2.0   # wide shot, so it needs the most magnification
 
 - name: Ryan Wong
   affiliation: University of Illinois Urbana-Champaign
   url: https://rwong.cs.illinois.edu/
+  photo: https://rwong.cs.illinois.edu/images/Wong_Photo.jpg
+  photo_position: center 20%
+  photo_zoom: 1.5
 
 - name: Alenkruth Krishnan Murali
   affiliation: University of Virginia
   url: https://alenkruth.com/
+  photo: https://alenkruth.com/media/images/avatar.jpg
+  photo_position: center 20%
+  photo_zoom: 1.15
 
 - name: Abdulrahman Mahmoud
   affiliation: MBZUAI
   url: https://ma3mool.github.io/
+  photo: https://ma3mool.github.io/images/abdulrahman.jpg
+  photo_position: center 20%
 
 - name: CASA Steering Group
   affiliation: Computer Architecture Student Association
   url: https://www.comparchsa.org
-  initials: CASA
+  # comparchsa.org redirects to sigarch.org/casa, which is where the logo lives.
+  photo: https://www.sigarch.org/wp-content/uploads/2021/02/CASA_logo_small.png
+  photo_fit: contain   # a logo, so fit it whole rather than cropping to a face
+  initials: CASA       # fallback if the logo ever moves

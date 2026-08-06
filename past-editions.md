@@ -1,6 +1,9 @@
 ---
 title: Past Editions
 subtitle: Previous editions of the workshop.
+description: >-
+  Earlier editions of the JOBS workshop, starting with JOBS 2024 at MICRO-57
+  in Austin, Texas.
 permalink: /past-editions/
 ---
 
