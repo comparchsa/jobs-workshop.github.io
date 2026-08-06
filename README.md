@@ -1,4 +1,4 @@
-# JOBS Workshop website
+# JOBS Workshop 2026 website
 
 Source for the JOBS Workshop site — a half-day workshop for computer
 architecture PhD students and postdocs going on the job market, co-located with
