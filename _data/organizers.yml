@@ -39,14 +39,7 @@
   url: https://shashanknag.github.io/
   photo: https://shashanknag.github.io/images/profile.png
   photo_position: center 25%
-  photo_zoom: 2.0   # wide shot, so it needs the most magnification
-
-- name: Ryan Wong
-  affiliation: University of Illinois Urbana-Champaign
-  url: https://rwong.cs.illinois.edu/
-  photo: https://rwong.cs.illinois.edu/images/Wong_Photo.jpg
-  photo_position: center 20%
-  photo_zoom: 1.5
+  photo_zoom: 2.0
 
 - name: Alenkruth Krishnan Murali
   affiliation: University of Virginia
@@ -55,10 +48,35 @@
   photo_position: center 20%
   photo_zoom: 1.15
 
+- name: Jianming Tong
+  affiliation: Georgia Institute of Technology
+  url: https://jianmingtong.github.io
+  photo: https://jianmingtong.github.io/images/profile_optimized.jpg
+  photo_position: center 20%
+
+- name: Ryan Wong
+  affiliation: University of Illinois Urbana-Champaign
+  url: https://rwong.cs.illinois.edu/
+  photo: https://rwong.cs.illinois.edu/images/Wong_Photo.jpg
+  photo_position: center 20%
+  photo_zoom: 1.5
+
+- name: Zishen Wan
+  affiliation: Columbia University
+  url: https://zishenwan.github.io
+  photo: https://zishenwan.github.io/images/Zishen_photo_2.JPG
+  photo_position: center 20%
+
 - name: Abdulrahman Mahmoud
   affiliation: MBZUAI
   url: https://ma3mool.github.io/
   photo: https://ma3mool.github.io/images/abdulrahman.jpg
+  photo_position: center 20%
+
+- name: Elba Garza
+  affiliation: University of Washington
+  url: https://www.cs.washington.edu/people/faculty/elbagarza
+  photo: https://eecs.engin.umich.edu/wp-content/uploads/2021/12/Garza.Elba_.jpg
   photo_position: center 20%
 
 - name: CASA Steering Group

@@ -12,7 +12,7 @@ permalink: /venue/
 ## Registration and Attending
 
 The workshop is open to all {{ w.conference_name }} registrants and is included
-in workshops and tutorials registration at MICRO. There is no separate workshop fee. Please indicate your interest in attending the JOBS workshop on the Whova registration form.
+in workshops and tutorials registration at MICRO. Please indicate your interest in attending the JOBS workshop on the Whova registration form.
 
 It is aimed at senior PhD students and postdocs preparing for the job market;
 anyone else at the conference is welcome. Rates and deadlines are on the
@@ -20,8 +20,6 @@ anyone else at the conference is welcome. Rates and deadlines are on the
 conference hotel block is on the
 [venue and hotel page]({{ w.venue_info_url }}).
 
-Because the workshop starts at 8:00 AM on the first day of MICRO-59, staying at
-or near the conference hotel the night before makes the morning easier.
 
 <p><a href="{{ '/jobs-workshop-2026.ics' | relative_url }}" download>Add the workshop to your calendar</a></p>
 
@@ -37,8 +35,7 @@ or near the conference hotel the night before makes the morning easier.
 {{ w.venue_address }} — see the
 [{{ w.conference_name }} venue and hotel page]({{ w.venue_info_url }}).
 
-The room is assigned by the {{ w.conference_name }} organizers and is usually
-published shortly before the conference. It will appear above and on the
+The room information will appear above shortly and on the
 [MICRO-59 workshops page]({{ w.conference_workshops_url }}).
 
 <iframe class="map-frame"
@@ -65,7 +62,7 @@ See the MICRO-59 [travel information]({{ w.conference_url }}attend/travelinfo.ph
 and [getting around Athens]({{ w.conference_url }}attend/traveltips.php) pages
 for more detail.
 
-## Accessibility and Dietary Requirements
+## Accessibility Requirements
 
 Contact the organizers at {% include contact.html %} with what you need.
 Requests made at least two weeks ahead are easiest to arrange, but ask even if

@@ -14,11 +14,7 @@
         {%- for item in site.data.navigation -%}
         <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
         {%- endfor -%}
-        {%- comment -%}
-        Not in the top nav — it is low-traffic and the nav is kept to five
-        tabs. It lives here so the page stays reachable.
-        {%- endcomment -%}
-        <li><a href="{{ '/past-editions/' | relative_url }}">Past Editions</a></li>
+
       </ul>
     </div>
 

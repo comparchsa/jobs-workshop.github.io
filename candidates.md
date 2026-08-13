@@ -72,7 +72,7 @@ focusable, so it is announced rather than landed on silently.
 ## Attending the Workshop
 
 The workshop is open to all {{ w.conference_name }} registrants and is included
-in workshops and tutorials registration at MICRO. There is no separate workshop fee. Please indicate your interest in attending the JOBS workshop on the Whova registration form. See [Venue]({{ '/venue/' | relative_url }}) for the room,
+in workshops and tutorials registration at MICRO. Please indicate your interest in attending the JOBS workshop on the Whova registration form. See [Venue]({{ '/venue/' | relative_url }}) for the room,
 travel, and registration details.
 
 ## Corrections and Removals
