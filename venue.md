@@ -1,6 +1,6 @@
 ---
 title: Attend
-subtitle: The workshop is held inside the MICRO-59 conference venue.
+subtitle: The workshop is colocated with the MICRO-59 conference.
 description: >-
   JOBS 2026 is held at the InterContinental Athenaeum Athens, inside the
   MICRO-59 venue. Travel directions, registration, and accessibility.
@@ -12,7 +12,7 @@ permalink: /venue/
 ## Registration and Attending
 
 The workshop is open to all {{ w.conference_name }} registrants and is included
-in workshops and tutorials registration at MICRO. Please indicate your interest in attending the JOBS workshop on the Whova registration form.
+in workshops and tutorials registration at MICRO. Please indicate your interest in attending the JOBS workshop on the Whova registration form. If you intend to participate as a job candidate, please also fill out the JOBS candidate registration form.
 
 It is aimed at senior PhD students and postdocs preparing for the job market;
 anyone else at the conference is welcome. Rates and deadlines are on the

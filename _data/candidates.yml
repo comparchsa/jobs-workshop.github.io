@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------
-# Job candidates selected for this edition.
+# Job candidates registered for this edition.
 #
-# Candidates apply through HotCRP; the organizers select them and add the
-# accepted ones here. Paste a new block per candidate, commit, push.
+# Candidates register for the workshop; the organizers add them here.
+# Paste a new block per candidate, commit, push.
 #
 # Each entry:
 #   name         – required
@@ -17,7 +17,7 @@
 # than an empty table.
 # ---------------------------------------------------------------------------
 
-# Copy this shape for each accepted candidate:
+# Copy this shape for each registered candidate:
 #
 # - name: Ada Lovelace
 #   affiliation: University of Virginia

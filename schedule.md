@@ -1,9 +1,8 @@
 ---
 title: Schedule
-subtitle: Talks, panels, and a Coffee Break, in the MICRO-59 morning workshop slot.
+subtitle: Talks, panels, a mini-workshop, and a Coffee Break, in the MICRO-59 morning workshop slot.
 description: >-
-  The JOBS 2026 programme — two panels on research careers and the mechanics
-  of the job search, a talk on how hiring decisions get made, and a networking
+  The JOBS 2026 programme — two panels, a chair's perspective talk, a mini-workshop on crafting your platform, and a networking
   Coffee Break. 8:00 AM to 12:00 PM on Sunday 1 November 2026.
 permalink: /schedule/
 ---

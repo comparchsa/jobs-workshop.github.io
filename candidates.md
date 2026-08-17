@@ -2,8 +2,8 @@
 title: Job Candidates
 subtitle: Students and postdocs presenting themselves to employers at MICRO-59.
 description: >-
-  How to apply as a JOBS 2026 job candidate, and the list of candidates
-  selected for this edition. Open to PhD students and postdocs in computer
+  How to register as a JOBS 2026 job candidate, and the list of candidates
+  attending this edition. Open to PhD students and postdocs in computer
   architecture who are on the market.
 permalink: /candidates/
 ---
@@ -12,17 +12,14 @@ permalink: /candidates/
 {% assign candidates = site.data.candidates %}
 {% assign candidate_count = candidates | size %}
 
-Job candidates apply through the workshop's submission site. The organizers
-review the applications and select the candidates who will be listed here and
-introduced during the workshop.
+Registration is completely open. All registered attendees who are on the job market and wish to be listed will be shown here.
 
-Applications are open to PhD students and postdocs in computer architecture and
-adjacent areas who are on the market this cycle. Attending the workshop is not
-a requirement for applying, and applying is not a requirement for attending.
+This list is open to PhD students and postdocs in computer architecture and
+adjacent areas who are on the market this cycle.
 
 {% include cta.html %}
 
-## Selected Candidates
+## Job Candidates
 
 {% if candidate_count > 0 %}
 {%- comment -%}
@@ -32,9 +29,9 @@ a narrow screen. role="region" + aria-label give it a name once it is
 focusable, so it is announced rather than landed on silently.
 {%- endcomment -%}
 <div class="table-scroll" tabindex="0" role="region"
-     aria-label="Selected job candidates, scrollable table">
+     aria-label="Job candidates, scrollable table">
   <table>
-    <caption class="visually-hidden">Selected job candidates for {{ w.name }} {{ w.edition }}</caption>
+    <caption class="visually-hidden">Job candidates for {{ w.name }} {{ w.edition }}</caption>
     <thead>
       <tr>
         <th scope="col">Candidate</th>
@@ -65,7 +62,7 @@ focusable, so it is announced rather than landed on silently.
 {% else %}
 <div class="empty-state">
   <h3>Not Published Yet</h3>
-  <p>Selected candidates will be listed here after the application deadline.</p>
+  <p>Registered candidates will be listed here.</p>
 </div>
 {% endif %}
 

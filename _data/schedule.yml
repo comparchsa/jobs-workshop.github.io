@@ -23,20 +23,18 @@
 # ---------------------------------------------------------------------------
 
 - start: "08:00"
-  end: "08:15"
+  end: "08:10"
   kind: session
-  title: Welcome and Introductions
+  title: Introduction and Welcome
   description: >-
     An overview of the morning and of how the workshop is organized.
 
-- start: "08:15"
+- start: "08:10"
   end: "09:00"
   kind: panel
-  title: "Panel: Research careers in industry and academia"
+  title: "Panel 1: Tips from the Trenches"
   description: >-
-    Senior researchers compare industry research, product engineering, and
-    academic research: what the work involves day to day, and how the paths
-    differ over the course of a career.
+    Wrapping up your PhD + applying to Postdoctoral and Industry Jobs.
   people:
     - name: TBD
       affiliation: Industry research
@@ -48,40 +46,42 @@
 - start: "09:00"
   end: "10:00"
   kind: panel
-  title: "Panel: Tips from the trenches"
+  title: "Panel 2: Architecture Globally"
   description: >-
-    Recent graduates on the mechanics of the search — application materials,
-    job talks, interviews, and offer negotiation.
+    Professor & Industry panelists from all over the world share their perspectives.
   people:
     - name: TBD
-      affiliation: Recently hired, academia
+      affiliation: Academia
     - name: TBD
-      affiliation: Recently hired, industry research
-    - name: TBD
-      affiliation: Recently hired, industry
+      affiliation: Industry
 
 - start: "10:00"
   end: "10:30"
   kind: break
   title: Coffee Break
   description: >-
-    The MICRO-59 workshop coffee break. Panelists and attending hiring managers
-    stay in the room.
+    The MICRO-59 workshop coffee break.
 
 - start: "10:30"
   end: "11:30"
   kind: talk
-  title: "Talk: The hiring committee's perspective"
+  title: "Talk: Chair's Perspective"
   description: >-
-    How faculty searches and industry research hires are evaluated and decided.
+    Insights from a department chair's perspective on hiring and academia.
   people:
     - name: TBD
       affiliation: TBD
 
 - start: "11:30"
+  end: "11:55"
+  kind: session
+  title: "Mini-Workshop: Crafting your Platform"
+  description: >-
+    Interactive session on crafting CVs, elevator pitches, and Research & Teaching Statements.
+
+- start: "11:55"
   end: "12:00"
   kind: session
-  title: Career mapping and peer discussion
+  title: Closing Remarks and Networking with Attendees
   description: >-
-    A closing session in which attendees map out their own timelines and
-    compare notes with others on the same schedule.
+    Wrap up the workshop with final thoughts and networking.

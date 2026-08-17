@@ -16,18 +16,14 @@ permalink: /organizers/
 Questions about the program, the job-candidate application, or accessibility:
 {% include contact.html %}
 
-## Speaking on a Panel
+## Volunteering for the Mini-Workshop
 
-Panelists are drawn from three groups:
+We are looking for volunteers to provide feedback on CVs, elevator pitches, and teaching/research statements during our new Mini-Workshop session. 
 
-- Senior researchers in industry research, product engineering, and academia.
-- Recent hires who went through the market in the last year or two.
-- People who have served on hiring committees, whether faculty searches or
-  industry research hiring.
+If you are willing to offer your time and expertise to review materials and provide constructive feedback to our candidates, please reach out!
 
-To nominate someone, or yourself, contact the organizers at
-{% include contact.html %}. Self-nominations are read the same way as any
-other.
+To volunteer, contact the organizers at
+{% include contact.html %}.
 
 ## Code of Conduct
 

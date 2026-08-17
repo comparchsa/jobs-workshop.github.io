@@ -25,8 +25,8 @@ venue_room: "TBD"
 # so it is not linked directly.)
 venue_info_url: "https://www.microarch.org/micro59/attend/"
 # Map pin geocoded from the street address above.
-venue_map_url: "https://www.openstreetmap.org/?mlat=37.9628&mlon=23.7247#map=17/37.9628/23.7247"
-venue_map_embed: "https://www.openstreetmap.org/export/embed.html?bbox=23.7187%2C37.9603%2C23.7307%2C37.9653&layer=mapnik&marker=37.9628%2C23.7247"
+venue_map_url: "https://www.openstreetmap.org/?mlat=37.9594&mlon=23.7216#map=17/37.9594/23.7216"
+venue_map_embed: "https://www.openstreetmap.org/export/embed.html?bbox=23.7156%2C37.9569%2C23.7276%2C37.9619&layer=mapnik&marker=37.9594%2C23.7216"
 
 # --- Co-located conference --------------------------------------------------
 conference_name: "MICRO-59"
@@ -36,14 +36,14 @@ conference_url: "https://www.microarch.org/micro59/"
 conference_workshops_url: "https://www.microarch.org/micro59/program/workshops-new.php"
 conference_registration_url: "https://www.microarch.org/micro59/attend/register.php"
 
-# --- Applying to be a job candidate -----------------------------------------
-# There is no RSVP. Attendance is open to any MICRO registrant; job candidates
-# apply through HotCRP and are selected by the organizers.
+# --- Registering as a job candidate -----------------------------------------
+# Registration is completely open. All registered attendees who are on the job
+# market and wish to be listed are added here.
 #
-# Set `url` to the HotCRP site when it is live. While it is empty the button
+# Set `url` to the registration site when it is live. While it is empty the button
 # renders as a greyed-out "opens soon" chip instead of a dead link.
 submission:
-  label: "Apply as a job candidate"
+  label: "Register as a job candidate"
   url: ""
   hotcrp_name: ""       # e.g. "jobs2026.hotcrp.com" — shown as the link text
 
@@ -59,11 +59,9 @@ code_of_conduct_url: "https://www.sigarch.org/benefit/cares/"
 # --- Important dates --------------------------------------------------------
 # Rendered on the Home page. Replace "TBD" as each date is fixed.
 important_dates:
-  - what: "Job candidate applications open"
+  - what: "Job candidate registration opens"
     when: "TBD"
-  - what: "Application deadline"
-    when: "TBD"
-  - what: "Notification to applicants"
+  - what: "Registration deadline"
     when: "TBD"
   - what: "Workshop"
     when: "November 1, 2026"
