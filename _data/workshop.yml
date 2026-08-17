@@ -44,14 +44,14 @@ conference_registration_url: "https://www.microarch.org/micro59/attend/register.
 # renders as a greyed-out "opens soon" chip instead of a dead link.
 submission:
   label: "Register as a job candidate"
-  url: ""
+  url: "https://forms.gle/PxQCya791N4Py2Hs8"
   hotcrp_name: ""       # e.g. "jobs2026.hotcrp.com" — shown as the link text
 
 # --- Contact / community ----------------------------------------------------
 # TODO: replace with the address the organizers actually monitor.
 # Until this contains an "@" it is printed as plain text on the site rather
 # than a mailto link, so no dead address is ever published.
-contact_email: "<placeholder>"
+contact_email: "comparchsa@gmail.com"
 organizing_body: "CASA (Computer Architecture Student Association)"
 organizing_body_url: "https://www.comparchsa.org"
 code_of_conduct_url: "https://www.sigarch.org/benefit/cares/"
@@ -60,9 +60,9 @@ code_of_conduct_url: "https://www.sigarch.org/benefit/cares/"
 # Rendered on the Home page. Replace "TBD" as each date is fixed.
 important_dates:
   - what: "Job candidate registration opens"
-    when: "TBD"
+    when: "August 18, 2026"
   - what: "Registration deadline"
-    when: "TBD"
+    when: "October 20, 2026"
   - what: "Workshop"
     when: "November 1, 2026"
 

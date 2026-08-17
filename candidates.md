@@ -1,6 +1,6 @@
 ---
 title: Job Candidates
-subtitle: Students and postdocs presenting themselves to employers at MICRO-59.
+subtitle: PhD students and postdocs presenting themselves to employers at MICRO-59.
 description: >-
   How to register as a JOBS 2026 job candidate, and the list of candidates
   attending this edition. Open to PhD students and postdocs in computer
@@ -12,7 +12,7 @@ permalink: /candidates/
 {% assign candidates = site.data.candidates %}
 {% assign candidate_count = candidates | size %}
 
-Registration is completely open. All registered attendees who are on the job market and wish to be listed will be shown here.
+Registration is open to all MICRO-59 attendees. All registered attendees who are on the job market and wish to be listed will be shown here.
 
 This list is open to PhD students and postdocs in computer architecture and
 adjacent areas who are on the market this cycle.
@@ -66,20 +66,14 @@ focusable, so it is announced rather than landed on silently.
 </div>
 {% endif %}
 
-## Attending the Workshop
-
-The workshop is open to all {{ w.conference_name }} registrants and is included
-in workshops and tutorials registration at MICRO. Please indicate your interest in attending the JOBS workshop on the Whova registration form. See [Venue]({{ '/venue/' | relative_url }}) for the room,
-travel, and registration details.
 
 ## Corrections and Removals
 
 To correct or remove an entry, contact the organizers at
-{% include contact.html %}. Removal requests are honoured without questions.
+{% include contact.html %}.
 
 ## For Employers
 
-The candidate list stays online after the conference, and the CV links go
-directly to the candidates. If you are recruiting and attending MICRO-59, the
+The candidate list will remain online after the conference. If you are recruiting and attending MICRO-59, the
 Coffee Break at 10:00 is the point in the
 [schedule]({{ '/schedule/' | relative_url }}) set aside for meeting candidates.

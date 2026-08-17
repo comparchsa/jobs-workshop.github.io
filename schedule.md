@@ -1,6 +1,5 @@
 ---
 title: Schedule
-subtitle: Talks, panels, a mini-workshop, and a Coffee Break, in the MICRO-59 morning workshop slot.
 description: >-
   The JOBS 2026 programme — two panels, a chair's perspective talk, a mini-workshop on crafting your platform, and a networking
   Coffee Break. 8:00 AM to 12:00 PM on Sunday 1 November 2026.
@@ -60,7 +59,7 @@ permalink: /schedule/
 {%- endfor %}
 </ol>
 
-The workshop sits in the first of the two MICRO-59 workshop blocks on
+The workshop is in the first of the two MICRO-59 workshop blocks on
 November 1. Lunch follows at 12:00, and afternoon workshops start at 1:00 PM.
 The full list of MICRO-59 workshops and tutorials is on the
 [conference site]({{ w.conference_workshops_url }}).
