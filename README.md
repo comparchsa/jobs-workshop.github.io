@@ -1,28 +1,23 @@
-# JOBS Workshop 2026 website
+# JOBS Workshop website
 
-Source for the JOBS Workshop site — a half-day workshop for computer
+Source for the JOBS Workshop, a workshop for computer
 architecture PhD students and postdocs going on the job market, co-located with
-MICRO. Listed by MICRO-59 as *JOBS — Accelerating Your Job Search*.
+MICRO.
 
 **Live site:** <https://comparchsa.github.io/jobs-workshop.github.io/>
 
-A plain [Jekyll](https://jekyllrb.com/) site built by GitHub Pages. No npm, no
-theme gem, no build step in CI — just Liquid templates, YAML, and one CSS file.
-Push to `main` and the site rebuilds in a minute or two.
-
-All maintenance documentation lives in this file. The site itself contains no
-instructions for editing it.
+A plain [Jekyll](https://jekyllrb.com/) site built by GitHub Pages. All site documentation lives in this file.
 
 ---
 
-## The one thing to know
+## Editing the site
 
 **Almost every edit you will ever make is to a file in [`_data/`](_data/).**
 
 The pages read from those YAML files and render whatever is in them. You should
 rarely need to touch a `.html` or `.md` file to change content.
 
-| Want to change… | Edit this |
+| Target change | Target file|
 |---|---|
 | Dates, times, venue, application link, deadlines | [`_data/workshop.yml`](_data/workshop.yml) |
 | The schedule, its speakers and panelists | [`_data/schedule.yml`](_data/schedule.yml) |
