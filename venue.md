@@ -64,6 +64,4 @@ for more detail.
 
 ## Accessibility Requirements
 
-Contact the organizers at {% include contact.html %} with what you need.
-Requests made at least two weeks ahead are easiest to arrange, but ask even if
-you are later than that.
+Contact the organizers at {% include contact.html %} with your requirements as early as possible. We will work with the conference organizers to try to accommodate your requests.
