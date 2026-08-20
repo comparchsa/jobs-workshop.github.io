@@ -66,6 +66,7 @@
 - start: "10:00"
   end: "10:30"
   kind: break
+  tag: networking
   title: Coffee Break
   description: >-
     Networking opportunity during the MICRO-59 workshop coffee break.

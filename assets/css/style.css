@@ -58,7 +58,7 @@
   /* --- Session-kind chips ------------------------- */
   --chip-panel-bg:   #dbeafe;  --chip-panel-fg:   #1e40af;  /* blue   */
   --chip-talk-bg:    #ccfbf1;  --chip-talk-fg:    #0f766e;  /* teal */
-  --chip-break-bg:   #dcfce7;  --chip-break-fg:   #166534;  /* green  */
+  --chip-break-bg:   #fce7f3;  --chip-break-fg:   #9d174d;  /* pink   */
   --chip-session-bg: #ffedd5;  --chip-session-fg: #9a3412;  /* orange */
 
   /* --- Shape ------------------------------------------------------------ */
