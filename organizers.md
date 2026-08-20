@@ -1,6 +1,6 @@
 ---
 title: Organizers
-subtitle: The organizing committee for JOBS 2026 workshop.
+subtitle: The organizing committee for JOBS 2026.
 description: >-
   The JOBS 2026 organizing committee, plus how to nominate a panelist or raise
   a concern.
@@ -15,13 +15,6 @@ permalink: /organizers/
 
 For questions about the program, the JOBS candidate application, or accessibility accomodations, please contact:
 {% include contact.html %}
-
-## Volunteering for the Mini-Workshop
-
-We are looking for senior architects in industry and academia to provide feedback on CVs, elevator pitches, and teaching/research statements during our new Mini-Workshop session. 
-
-If you are willing to offer your time and expertise, please reach out to the organizers at
-{% include contact.html %}.
 
 ## Code of Conduct
 

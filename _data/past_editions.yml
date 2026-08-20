@@ -7,7 +7,7 @@
 - year: "2024"
   conference: MICRO-57
   date: "November 2, 2024"
-  location: Austin, Texas, USA
+  location: Austin, Texas, USA (half-day workshop)
   url: https://sites.google.com/cornell.edu/jobs-workshop-2024/home
   summary: >-
     Panels on research careers and on the mechanics of the
@@ -22,19 +22,29 @@
 - year: "2022"
   conference: MICRO-55
   date: "October 1, 2022"
-  location: Chicago, Illinois, USA
+  location: Chicago, Illinois, USA (full-day workshop)
   url: https://sites.google.com/cornell.edu/jobs-micro-2022/home?authuser=0
   summary: >-
     Panels on industry research, product roles, and academic paths, along with networking coffee breaks.
   highlights:
     - "Panel: Tips from the Trenches"
+    - "Panel: Academia Tips and Strategies"
+    - "Talk: Department Chair Perspective — Sharad Malik (Princeton)"
+    - "Talk: I Survived Tenure, and So Can You! - Adrian Sampson (Cornell)"
+    - "Talk: Industry or Academia? It's  not the right question to ask! - Samira Khan (UVA/Google Research)"
+    - "Talk: Industry Research: Staying Connected with Academia - Gilles Pokam (Intel Labs)"
 
 - year: "2020"
   conference: MICRO-53
   date: "October 18, 2020"
-  location: Virtual
+  location: Virtual (full-day workshop)
   url: https://jobs.eecs.umich.edu/
   summary: >-
     Virtual workshop featuring panels on academic job search tips and strategies, and research pitch competitions.
   highlights:
+    - "Talks: Tips from the Academic Trenches - Caroline Trippel (Stanford) and Rohan Padhye (CMU)"
     - "Panel: Academic Job Search: Tips & Strategies"
+    - "Panel: How to Get Your Application Packet Seen?"
+    - "Talk: A Department Chair's Perspective - Remzi H. Arpaci-Dusseau (U. Wisconsin CS)"
+    - "Talk: The Job Talk Talk - James Mickens (Harvard)"
+    - "Talks: Industry (Research/Product) vs. Academia (Research/Teaching) - Kathryn McKinley (Google) and Lisa Hsu (Microsoft)"
