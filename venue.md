@@ -5,6 +5,7 @@ description: >-
   JOBS 2026 is held at the InterContinental Athenaeum Athens, inside the
   MICRO-59 venue. Registration, venue details, and accessibility.
 permalink: /venue/
+header_cta: true
 ---
 
 {% assign w = site.data.workshop %}
@@ -19,9 +20,7 @@ permalink: /venue/
 
 ## Registration and Attending
 
-The workshop is open to all {{ w.conference_name }} registrants. Please indicate your interest in attending the JOBS workshop on the Whova registration form. If you intend to participate as a JOBS candidate, please also fill out the JOBS candidate registration form.
-
-JOBS is a workshop to help senior graduate students and postdocs prepare for their upcoming job searches. The workshop is targeted towards those seeking academic or industry careers and will feature a series of talks, panels, and networking opportunities for participants. The main goals of this workshop are: (1) to provide helpful advice and mentorship to graduate students and postdocs who will soon be on the job market and (2) to provide visibility to JOBS candidate participants by connecting them with potential employers in academia or industry.
+The workshop is open to all {{ w.conference_name }} registrants. Please indicate your interest in attending the JOBS workshop on the Whova registration form. If you intend to participate as a JOBS candidate, please also fill out the [JOBS candidate registration form]({{ w.submission.url }}).
 
 ## Volunteering for the Mini-Workshop
 
