@@ -6,6 +6,7 @@ layout: default
     <p class="eyebrow">{{ site.data.workshop.name }} {{ site.data.workshop.edition }}</p>
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}<p class="page-sub">{{ page.subtitle }}</p>{% endif %}
+    {% if page.header_cta %}{% include cta.html %}{% endif %}
   </div>
 </section>
 

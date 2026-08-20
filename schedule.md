@@ -1,7 +1,7 @@
 ---
 title: Schedule
 description: >-
-  The JOBS 2026 programme — two panels, a chair's perspective talk, a mini-workshop on crafting your platform, and a networking
+  The JOBS 2026 program — two panels, a chair's perspective talk, a mini-workshop on crafting your platform, and a networking
   Coffee Break. 8:00 AM to 12:00 PM on Sunday 1 November 2026.
 permalink: /schedule/
 ---
@@ -30,7 +30,9 @@ permalink: /schedule/
       {%- endif -%}
     </div>
     <div class="slot-body">
-      <span class="chip chip--{{ slot.kind | default: 'session' }}">{{ slot.kind | default: 'session' }}</span>
+      {%- if slot.kind and slot.kind != "" %}
+      <span class="chip chip--{{ slot.kind }}">{{ slot.tag | default: slot.kind }}</span>
+      {%- endif %}
       <h2>{{ slot.title }}</h2>
       {%- if slot.description %}
       <p>{{ slot.description }}</p>
@@ -58,8 +60,3 @@ permalink: /schedule/
   </li>
 {%- endfor %}
 </ol>
-
-The workshop is in the first of the two MICRO-59 workshop blocks on
-November 1. Lunch follows at 12:00, and afternoon workshops start at 1:00 PM.
-The full list of MICRO-59 workshops and tutorials is on the
-[conference site]({{ w.conference_workshops_url }}).

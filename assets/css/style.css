@@ -268,7 +268,7 @@ code {
   background-size: 400% 400%;
   animation: gradient-shift 15s ease infinite;
   border-bottom: 1px solid var(--border);
-  padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+  padding: clamp(1.5rem, 3vw, 2.25rem) 0 clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 @keyframes gradient-shift {
@@ -305,7 +305,6 @@ code {
 
 .hero-lede {
   font-size: clamp(1.02rem, .98rem + .35vw, 1.2rem);
-  max-width: 62ch;
   color: var(--text-muted);
 }
 
@@ -405,27 +404,45 @@ code {
 
 .page-head h1 { margin-bottom: .25em; }
 
+/* in the header the section's own padding closes the block — the button
+   row only needs a small gap above it */
+.page-head .cta-row { margin: .85rem 0 0; }
+
 .page-sub {
   font-size: 1.08rem;
   color: var(--text-muted);
-  max-width: 62ch;
   margin: 0;
 }
 
-.page-body { padding: clamp(2rem, 5vw, 3rem) 0 4rem; }
+/* padding-block only — the shorthand would wipe out .wrap's padding-inline
+   and pull the body text 2rem left of the page title above it */
+.page-body { padding-block: clamp(2rem, 5vw, 3rem) 4rem; }
 .page-body > :first-child { margin-top: 0; }
 .page-body h2 { margin-top: 2.5rem; }
-.page-body > h2:first-of-type { margin-top: 0; }
-.page-body ul, .page-body ol { padding-left: 1.3rem; }
-.page-body li { margin-bottom: .4rem; }
+/* :first-child, not :first-of-type — a page whose first h2 follows a grid or
+   a paragraph still needs its heading gap */
+.page-body > h2:first-child { margin-top: 0; }
+
+/* prose lists get the reading indent; component lists (.venue-facts,
+   .timeline, .people-grid …) keep their own padding: 0 */
+.page-body ul:not([class]), .page-body ol:not([class]) { padding-left: 1.3rem; }
+.page-body ul:not([class]) > li, .page-body ol:not([class]) > li { margin-bottom: .4rem; }
 
 /* ------------------------------------------------------------ section ---- */
 
-.section { padding: clamp(2.5rem, 5.5vw, 4rem) 0; }
+.section { padding: clamp(1.25rem, 2.25vw, 1.75rem) 0; }
 .section--soft { background: var(--bg-soft); border-block: 1px solid var(--border); }
 
-.section-head { max-width: 68ch; margin-bottom: 1.75rem; }
+/* the section's own padding is the spacing — don't stack a trailing
+   paragraph margin on top of it */
+.section > .wrap > :last-child { margin-bottom: 0; }
+
+.section-head { margin-bottom: .75rem; }
+
+/* justified without hyphenation, so word spacing carries the whole line */
+.justified { text-align: justify; hyphens: none; text-wrap: pretty; }
 .section-head p { color: var(--text-muted); margin-bottom: 0; }
+.section-head > :last-child { margin-bottom: 0; }
 
 /* -------------------------------------------------------------- cards ---- */
 
@@ -468,7 +485,7 @@ code {
   gap: .25rem 1rem;
   align-items: baseline;
   justify-content: space-between;
-  padding: .85rem 1.15rem;
+  padding: .4rem 1.15rem;
   border-bottom: 1px solid var(--border);
 }
 .dates-row:last-child { border-bottom: 0; }
@@ -482,45 +499,24 @@ code {
 
 .timeline > li {
   display: grid;
-  grid-template-columns: 7.5rem 1fr;
-  gap: 1.75rem;
+  grid-template-columns: 6rem 1fr;
+  gap: 1rem;
   padding-bottom: 1.5rem;
   position: relative;
 }
 
-/* the connecting rail */
-.timeline > li::before {
-  content: "";
-  position: absolute;
-  left: 7.5rem;
-  top: .8rem;
-  bottom: -.4rem;
-  width: 2px;
-  margin-left: -.87rem;
-  background: var(--border);
-}
-.timeline > li:last-child::before { display: none; }
-
 .slot-time {
-  text-align: right;
+  /* left-aligned so each time starts on the same margin as the page text */
+  text-align: left;
   font-variant-numeric: tabular-nums;
   font-weight: 650;
   padding-top: 1.05rem;
-  position: relative;
 }
+
+/* trailing dash so the start time reads as the beginning of a range */
+.slot-time > time:first-child::after { content: " \2013"; }
 
 .slot-time .slot-end { display: block; font-weight: 400; color: var(--text-muted); font-size: .9rem; }
-
-.slot-time::after {
-  content: "";
-  position: absolute;
-  right: -1.74rem;
-  top: 1.3rem;
-  width: 11px; height: 11px;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 2px solid var(--brand);
-}
 
 .slot-body {
   background: var(--surface);
@@ -538,7 +534,7 @@ code {
 }
 
 /* h2 for correct document outline; sized like a card heading. */
-.slot-body h2 { margin-bottom: .3rem; font-size: 1.12rem; }
+.slot-body h2 { margin-top: 0; margin-bottom: .3rem; font-size: 1.12rem; }
 .slot-body > p { color: var(--text-muted); margin-bottom: 0; }
 .slot-body > p + .people { margin-top: 1.1rem; }
 
@@ -590,10 +586,9 @@ code {
 
 @media (max-width: 700px) {
   .timeline > li { grid-template-columns: 1fr; gap: .45rem; }
-  .timeline > li::before, .slot-time::after { display: none; }
   .slot-time { text-align: left; padding-top: 0; }
   .slot-time .slot-end { display: inline; }
-  .slot-time .slot-end::before { content: "– "; }
+  .slot-time > time:first-child::after { content: " \2013"; }
 }
 
 /* --------------------------------------------------------- people grid --- */
@@ -816,7 +811,7 @@ tbody tr:hover { background: var(--bg-soft); }
 .site-footer {
   background: var(--bg-sunken);
   border-top: 1px solid var(--border);
-  padding: 2.75rem 0 1.5rem;
+  padding: 2rem 0 1.25rem;
   font-size: .93rem;
 }
 
@@ -888,7 +883,6 @@ tbody tr:hover { background: var(--bg-soft); }
     border: 1px solid CanvasText;
   }
   .site-nav a.is-active { outline: 2px solid CanvasText; }
-  .timeline > li::before, .slot-time::after { forced-color-adjust: none; }
 }
 
 @media print {

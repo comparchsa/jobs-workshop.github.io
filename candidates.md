@@ -1,25 +1,25 @@
 ---
-title: Job Candidates
-subtitle: PhD students and postdocs presenting themselves to employers at MICRO-59.
+title: JOBS Candidates
+subtitle: 
 description: >-
   How to register as a JOBS 2026 job candidate, and the list of candidates
   attending this edition. Open to PhD students and postdocs in computer
   architecture who are on the market.
 permalink: /candidates/
+header_cta: true
 ---
 
 {% assign w = site.data.workshop %}
 {% assign candidates = site.data.candidates %}
 {% assign candidate_count = candidates | size %}
 
-Registration is open to all MICRO-59 attendees. All registered attendees who are on the job market and wish to be listed will be shown here.
+To advertise yourself on this page, please register as a JOBS candidate above. The candidate list will remain online after the conference. 
 
-This list is open to PhD students and postdocs in computer architecture and
-adjacent areas who are on the market this cycle.
+If you are recruiting and attending MICRO-59, please come meet candidates during the
+Coffee Break at 10:00 am, and the mini-workshop session at 11:30 am (see [schedule]({{ '/schedule/' | relative_url }})). 
 
-{% include cta.html %}
-
-## Job Candidates
+To update or remove an entry, please contact the organizers at
+{% include contact.html %}.
 
 {% if candidate_count > 0 %}
 {%- comment -%}
@@ -61,19 +61,6 @@ focusable, so it is announced rather than landed on silently.
 </div>
 {% else %}
 <div class="empty-state">
-  <h3>Not Published Yet</h3>
   <p>Registered candidates will be listed here.</p>
 </div>
 {% endif %}
-
-
-## Corrections and Removals
-
-To correct or remove an entry, contact the organizers at
-{% include contact.html %}.
-
-## For Employers
-
-The candidate list will remain online after the conference. If you are recruiting and attending MICRO-59, the
-Coffee Break at 10:00 is the point in the
-[schedule]({{ '/schedule/' | relative_url }}) set aside for meeting candidates.

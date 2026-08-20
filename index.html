@@ -2,7 +2,7 @@
 layout: default
 title: Accelerating Your Job Search
 description: >-
-  A half-day workshop for PhD students and postdocs in computer architecture
+  A half-day workshop to help prepare senior PhD students and postdocs in computer architecture
   preparing to go on the job market. Sunday 1 November 2026, co-located with
   MICRO-59 in Athens.
 permalink: /
@@ -20,9 +20,7 @@ permalink: /
     </h1>
 
     <p class="hero-lede">
-      A half-day workshop for PhD students and postdocs in computer architecture
-      who are preparing to go on the job market, in academia or in industry.
-      Two panels, a chair's perspective talk, a mini-workshop on crafting your platform, and a networking break.
+      A half-day workshop to help prepare senior PhD students and postdocs for their upcoming job searches, in academia & industry.
     </p>
 
     <ul class="hero-facts">
@@ -50,65 +48,18 @@ permalink: /
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="about">
   <div class="wrap">
     <div class="section-head">
       <h2>About the Workshop</h2>
-      <p>
-        The workshop has two aims. The first is advice: panels and a talk on how
-        the academic and industrial job markets work, from people who have
-        recently been through them and from people who make hiring decisions.
-        The second is visibility: all registered attendees will be listed as job candidates on this site for potential employers
-        attending {{ w.conference_name }}.
+      <p class="justified">
+        JOBS workshop is aimed at helping senior graduate students and postdocs prepare for their upcoming job searches. JOBS is targeted towards those seeking academic or industry careers and will feature a series of talks, panels, and networking opportunities for participants. The main goals of this workshop are: (1) provide helpful advice and mentorship to graduate students and postdocs who will soon be on the job market, and (2) provide visibility to JOBS candidates & connect them with potential employers in academia and industry.
       </p>
-    </div>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>Panels and Talks</h3>
-        <p>
-          A "Tips from the Trenches" panel on wrapping up your PhD and applying for jobs, an "Architecture Globally" panel featuring professors and industry experts from around the world, and a talk offering a department chair's perspective on hiring.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Mini-Workshop</h3>
-        <p>
-          An interactive mini-workshop on crafting your CV, elevator pitch, and research/teaching statements.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Coffee Break</h3>
-        <p>
-          Time set aside for candidates to meet the panelists and potential employers attending the conference.
-        </p>
-      </div>
     </div>
   </div>
 </section>
 
 <section class="section section--soft">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Schedule</h2>
-      <p>Full details, including speakers, are on the <a href="{{ '/schedule/' | relative_url }}">schedule page</a>.</p>
-    </div>
-
-    <div class="dates">
-      {%- for slot in site.data.schedule %}
-      <div class="dates-row">
-        <span class="dates-what">{{ slot.title }}</span>
-        <span class="dates-when">
-          {%- if slot.start and slot.start != "" -%}
-          {{ slot.start }}{% if slot.end and slot.end != "" %}&ndash;{{ slot.end }}{% endif %}
-          {%- else -%}TBD{%- endif -%}
-        </span>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section">
   <div class="wrap">
     <div class="section-head">
       <h2>Important Dates</h2>
@@ -143,16 +94,37 @@ permalink: /
   </div>
 </section>
 
-<section class="section section--soft">
+<section class="section">
   <div class="wrap">
     <div class="section-head">
-      <h2>Job Candidates</h2>
+      <h2>JOBS Candidates</h2>
       <p>
-        Registration is open to all MICRO-59 attendees. All registered attendees who are on the job market will be listed on this site as job candidates.
+        Registration is open to all MICRO-59 attendees. All registered JOBS candidates who are on the job market will be listed and advertised on the <a href="{{ '/candidates/' | relative_url }}">JOBS Candidates page</a> for potential employers attending {{ w.conference_name }}.
       </p>
     </div>
     {% include cta.html %}
-    <p><a href="{{ '/candidates/' | relative_url }}">Job Candidates Page</a></p>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Schedule</h2>
+      <p>Full details, including speakers, are on the <a href="{{ '/schedule/' | relative_url }}">schedule page</a>.</p>
+    </div>
+
+    <div class="dates">
+      {%- for slot in site.data.schedule %}
+      <div class="dates-row">
+        <span class="dates-what">{{ slot.title }}</span>
+        <span class="dates-when">
+          {%- if slot.start and slot.start != "" -%}
+          {{ slot.start }}{% if slot.end and slot.end != "" %}&ndash;{{ slot.end }}{% endif %}
+          {%- else -%}TBD{%- endif -%}
+        </span>
+      </div>
+      {%- endfor %}
+    </div>
   </div>
 </section>
 
