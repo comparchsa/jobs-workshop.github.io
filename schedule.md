@@ -30,9 +30,6 @@ permalink: /schedule/
       {%- endif -%}
     </div>
     <div class="slot-body">
-      {%- if slot.kind and slot.kind != "" and slot.tag != "none" %}
-      <span class="chip chip--{{ slot.kind }}">{{ slot.tag | default: slot.kind }}</span>
-      {%- endif %}
       <h2>{{ slot.title }}</h2>
       {%- if slot.description and slot.description != "" %}
       <p>{{ slot.description }}</p>

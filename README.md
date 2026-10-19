@@ -119,7 +119,7 @@ works at any stage of planning:
 
 A slot with no `start` renders without a time on `/schedule/` and shows "TBD" in
 the home-page summary. `kind` is one of `panel`, `talk`, `break`, or `session`
-and sets the word in the little chip above the title. Reordering entries
+and sets the card style (breaks are shaded). Reordering entries
 reorders the page.
 
 The note above the schedule comes from `schedule_note` in
