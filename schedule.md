@@ -1,7 +1,7 @@
 ---
 title: Schedule
 description: >-
-  The JOBS 2026 program — two panels, a chair's perspective talk, a mini-workshop on crafting your platform, and a networking
+  The JOBS 2026 program — two panels, a keynote, a mini-workshop on crafting your platform, and a networking
   Coffee Break. 8:00 AM to 12:00 PM on Sunday 1 November 2026.
 permalink: /schedule/
 ---
@@ -30,11 +30,11 @@ permalink: /schedule/
       {%- endif -%}
     </div>
     <div class="slot-body">
-      {%- if slot.kind and slot.kind != "" %}
+      {%- if slot.kind and slot.kind != "" and slot.tag != "none" %}
       <span class="chip chip--{{ slot.kind }}">{{ slot.tag | default: slot.kind }}</span>
       {%- endif %}
       <h2>{{ slot.title }}</h2>
-      {%- if slot.description %}
+      {%- if slot.description and slot.description != "" %}
       <p>{{ slot.description }}</p>
       {%- endif %}
       {%- assign people_count = slot.people | size -%}
@@ -49,8 +49,8 @@ permalink: /schedule/
             {%- else -%}
             <span class="person-name">{{ person.name }}</span>
             {%- endif -%}
-            {%- if person.affiliation %}<span class="person-affil">{{ person.affiliation }}</span>{% endif %}
             {%- if person.role %}<span class="person-role">{{ person.role }}</span>{% endif %}
+            {%- if person.affiliation %}<span class="person-affil">{{ person.affiliation }}</span>{% endif %}
           </span>
         </li>
         {%- endfor %}

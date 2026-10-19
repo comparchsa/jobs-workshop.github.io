@@ -20,7 +20,7 @@ timezone: "EET (UTC+2), Athens local time"
 city: "Athens, Greece"
 venue_name: "InterContinental Athenaeum Athens"
 venue_address: "89-93 Syngrou Avenue, 117 45 Athens, Greece"
-venue_room: "TBD"
+venue_room: "Ypsilon I"
 # MICRO-59's own venue page. (The hotel's ihg.com page blocks a lot of traffic,
 # so it is not linked directly.)
 venue_info_url: "https://www.microarch.org/micro59/attend/"
@@ -62,7 +62,7 @@ important_dates:
   - what: "JOBS candidate registration opens"
     when: "August 20, 2026"
   - what: "Registration deadline"
-    when: "October 20, 2026"
+    when: "October 30, 2026"
   - what: "Workshop"
     when: "November 1, 2026"
 
@@ -78,5 +78,4 @@ calendar:
 
 # --- Schedule note ----------------------------------------------------------
 # Shown above the schedule. Set to "" to hide it once the program is final.
-schedule_note: >-
-  Tentative schedule. Times and participants are subject to change. 
+schedule_note: "" 

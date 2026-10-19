@@ -259,7 +259,6 @@ index.html             home page (hero + sections)
 schedule.md            timeline rendered from _data/schedule.yml
 candidates.md          how to apply + table from _data/candidates.yml
 organizers.md          committee grid, panelist nominations, contact
-venue.md               venue, travel, registration, accessibility
 past-editions.md       archive from _data/past_editions.yml (footer link only)
 404.html               shown for any unknown URL
 calendar.ics           generates /jobs-workshop-2026.ics from workshop.yml

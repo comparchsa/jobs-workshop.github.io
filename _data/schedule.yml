@@ -10,7 +10,8 @@
 #   kind         – panel | talk | break | session   (controls the colour tag)
 #                  omit it entirely and the slot renders with no tag at all
 #   tag          – optional wording for the tag, when the kind's own name is
-#                  not what should be printed (the colour still follows kind)
+#                  not what should be printed (the colour still follows kind);
+#                  "none" hides the tag but keeps the kind's card styling
 #   title        – required
 #   description  – optional paragraph under the title
 #   people       – optional list of participants:
@@ -25,72 +26,85 @@
 # Reordering entries reorders the page. There is nothing else to update.
 # ---------------------------------------------------------------------------
 
-- start: "08:00"
-  end: "08:10"
+- start: "08:00 am"
+  end: "08:10 am"
   title: Introduction and Welcome
   description: >-
-    JOBS workshop overview.
 
-- start: "08:10"
-  end: "09:00"
+- start: "08:10 am"
+  end: "09:00 am"
   kind: panel
   title: "Panel 1: Tips from the Trenches"
   description: >-
-    Wrapping up your PhD + applying to postdoctoral, industry, and faculty jobs.
   people:
-    - name: TBD
-      affiliation: 
-    - name: TBD
-      affiliation: 
-    - name: TBD
-      affiliation: 
-    - name: TBD
-      affiliation: 
+    - name: Jovan Stojkovic
+      role: Assistant Professor		
+      affiliation: University of Texas at Austin
+      photo: /assets/img/speakers/jovan-stojkovic.jpg
+    - name: Chris Kjellqvist
+      role: FPGA Technologist
+      affiliation: Radix Trading LLC
+      photo: /assets/img/speakers/chris-kjellqvist.jpg
+    - name: Bahar Asgari
+      role: Assistant Professor
+      affiliation: University of Maryland, College Park
+      photo: /assets/img/speakers/bahar-asgari.jpg
+    - name: Rahul Bera
+      role: Senior Researcher
+      affiliation: Huawei Zürich Research Center
+      photo: /assets/img/speakers/rahul-bera.webp
 
-- start: "09:00"
-  end: "10:00"
-  kind: panel
-  title: "Panel 2: Architecture Globally"
-  description: >-
-    Professors & Industry experts from all over the world share their perspectives.
+- start: "09:00 am"
+  end: "10:00 am"
+  kind: talk
+  tag: keynote
+  title: "Keynote Talk:"
   people:
-    - name: TBD
-      affiliation: 
-    - name: TBD
-      affiliation: 
-    - name: TBD
-      affiliation: 
-    - name: TBD
-      affiliation: 
+    - name: Lizy John
+      role: Professor, Truchard Foundation Chair in Engineering
+      affiliation: University of Texas at Austin
+      photo: /assets/img/speakers/lizy-john.jpg
 
-- start: "10:00"
-  end: "10:30"
+- start: "10:00 am"
+  end: "10:30 am"
   kind: break
-  tag: networking
+  tag: none
   title: Coffee Break
   description: >-
     Networking opportunity during the MICRO-59 workshop coffee break.
 
-- start: "10:30"
-  end: "11:30"
-  kind: talk
-  title: "Talk: Department Chair Perspective"
+- start: "10:30 am"
+  end: "11:30 am"
+  kind: panel
+  title: "Panel 2: Architecture Globally"
   description: >-
-    Insights from a department chair on hiring and academia.
   people:
-    - name: TBD
-      affiliation: 
+    - name: Aamer Jaleel  	 
+      role: Distinguished Research Scientist
+      affiliation: NVIDIA Research
+      photo: /assets/img/speakers/aamer-jaleel.jpg
+    - name: Gilles Pokam
+      role: Fellow
+      affiliation: AMD
+      photo: /assets/img/speakers/gilles-pokam.jpg
+    - name: Michail Maniatakos
+      role: Professor & Program Head of Computer Engineering
+      affiliation: New York University Abu Dhabi
+      photo: /assets/img/speakers/michail-maniatakos.jpg
+    - name: Christina Giannoula
+      role: Tenure-Track Faculty
+      affiliation: Max Planck Institute for Software Systems
+      photo: /assets/img/speakers/christina-giannoula.jpg
 
-- start: "11:30"
-  end: "11:55"
+- start: "11:30 am"
+  end: "11:55 am"
   kind: session
   tag: interactive session
   title: "Mini-Workshop: Crafting your Platform"
   description: >-
-    Interactive session to get feedback on your CVs, elevator pitches, and Research & Teaching Statements.
+    Interactive session to get feedback on your CVs, elevator pitches, and Research & Teaching Statements
 
-- start: "11:55"
-  end: "12:00"
+- start: "11:55 am"
+  end: "12:00 pm"
   title: Closing Remarks and Networking with Attendees
   description: >-
-    Final remarks and networking.

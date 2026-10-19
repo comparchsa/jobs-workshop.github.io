@@ -539,6 +539,18 @@ code {
 .slot-body > p + .people { margin-top: 1.1rem; }
 
 .slot--break .slot-body { background: var(--bg-soft); box-shadow: none; }
+/* breaks and plain sessions (intro, mini-workshop, closing) are short entries
+   with no speakers: pull the tag, title and description together */
+.slot--break .slot-body,
+.slot--session .slot-body { padding-block: 1rem; }
+.slot--break .chip,
+.slot--session .chip { margin-bottom: .3rem; }
+.slot--break .slot-body h2,
+.slot--session .slot-body h2 { margin-bottom: .1rem; }
+/* a card holding only its title (intro, closing) is stretched to the height
+   of the two-line time beside it, so centre the title vertically in it */
+.slot-body:has(> h2:only-child) { display: flex; align-items: center; }
+.slot-body > h2:only-child { margin-bottom: 0; }
 
 .chip {
   display: inline-block;
@@ -562,19 +574,24 @@ code {
   list-style: none;
   margin: 0;
   padding: 0;
+  /* columns of equal width, so every column starts on the same line; auto-fit
+     drops unused columns, so a lone speaker (the keynote) gets the whole row */
   display: grid;
-  gap: .8rem;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
 }
 
 .people li { display: flex; align-items: center; gap: .7rem; }
+.people .person-name { white-space: nowrap; }
 
-.people .avatar { width: 44px; height: 44px; margin: 0; flex: none; }
-.people .avatar-initials { font-size: .9rem; }
+.people .avatar { width: 64px; height: 64px; margin: 0; flex: none; }
+.people .avatar-initials { font-size: 1.2rem; }
 
 .person-name { font-weight: 600; text-decoration-thickness: 1px; }
 .person-affil { color: var(--text-muted); font-size: .88rem; }
-.person-role {
+/* in the schedule the role is the plain line and the institution the accent tag */
+.person-role { color: var(--text-muted); font-size: .88rem; }
+.people .person-affil {
   font-size: .7rem;
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -582,7 +599,8 @@ code {
   color: var(--accent);
 }
 
-.people .person-lines { display: flex; flex-direction: column; min-width: 0; }
+.people .person-lines { display: flex; flex-direction: column; min-width: 0; line-height: 1.3; }
+.people .person-lines .person-affil { margin-top: .15rem; }
 
 @media (max-width: 700px) {
   .timeline > li { grid-template-columns: 1fr; gap: .45rem; }
@@ -658,7 +676,7 @@ code {
 
 /* explicit `initials:` strings (e.g. "CASA") need to fit the same circle */
 .avatar-initials--long { font-size: 1.05rem; letter-spacing: .02em; }
-.people .avatar-initials--long { font-size: .68rem; }
+.people .avatar-initials--long { font-size: .9rem; }
 
 /* unannounced speaker: an empty outline rather than a "T" for "TBD" */
 .avatar-tbd {
