@@ -700,6 +700,7 @@ code {
 /* ------------------------------------------------------------- tables ---- */
 
 .table-scroll {
+  position: relative;               /* contain the absolutely-positioned .visually-hidden spans */
   overflow-x: auto;                 /* wide tables scroll, the page never does */
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -731,14 +732,16 @@ tbody tr:hover { background: var(--bg-soft); }
   font-size: .85rem;
   color: var(--text-muted);
 }
+.candidate-market { white-space: nowrap; }
 .candidate-role { margin-top: .15rem; }
 .candidate-market { margin-bottom: .4rem; }
 
 .candidates th, .candidates td { padding-inline: .9rem; }
-.candidates td:nth-child(1) { min-width: 11rem; }
-.candidates td:nth-child(2) { min-width: 11rem; }
-.candidates td:nth-child(3) { min-width: 15rem; }
-.candidates td:nth-child(4) { min-width: 14rem; }
+.candidates td:nth-child(1) { min-width: 10rem; }
+.candidates td:nth-child(2) { min-width: 9.5rem; }
+.candidates td:nth-child(3) { min-width: 14rem; }
+.candidates td:nth-child(4) { min-width: 15.5rem; }
+.candidates td:nth-child(6) { white-space: nowrap; }
 .nowrap { white-space: nowrap; }
 
 .tag-list, .materials { list-style: none; margin: 0; padding: 0; }
@@ -761,7 +764,7 @@ tbody tr:hover { background: var(--bg-soft); }
 .area--gpu-microarch        { background: #dcfce7; color: #166534; }
 .area--interconnects        { background: #cffafe; color: #155e75; }
 .area--ml-accelerators      { background: #ede9fe; color: #5b21b6; }
-.area--non-ml-accelerators  { background: #fae8ff; color: #86198f; }
+.area--non-ml-accelerators  { background: #f3ead9; color: #6b4a14; }
 .area--wafer-scale          { background: #fef3c7; color: #92400e; }
 .area--ml-systems           { background: #e0e7ff; color: #3730a3; }
 .area--verification         { background: #ecfccb; color: #3f6212; }
@@ -773,6 +776,8 @@ tbody tr:hover { background: var(--bg-soft); }
 .area--memory-storage       { background: #fce7f3; color: #9d174d; }
 
 .candidates .pill {
+  font-size: .75rem;
+  padding: .12rem .55rem;
   background: transparent;
   border: 1px solid var(--border-strong);
   color: var(--text);

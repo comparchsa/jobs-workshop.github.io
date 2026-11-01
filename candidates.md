@@ -77,21 +77,14 @@ focusable, so it is announced rather than landed on silently.
           <ul class="materials">
             <li><a href="{{ c.cv }}">CV<span class="visually-hidden"> for {{ c.name }}</span></a></li>
             {%- if c.research_statement and c.research_statement != "" %}
-            <li><a href="{{ c.research_statement }}">Research statement<span class="visually-hidden"> for {{ c.name }}</span></a></li>
+            <li><a href="{{ c.research_statement }}">Research<span class="visually-hidden"> statement for {{ c.name }}</span></a></li>
             {%- endif %}
             {%- if c.teaching_statement and c.teaching_statement != "" %}
-            <li><a href="{{ c.teaching_statement }}">Teaching statement<span class="visually-hidden"> for {{ c.name }}</span></a></li>
+            <li><a href="{{ c.teaching_statement }}">Teaching<span class="visually-hidden"> statement for {{ c.name }}</span></a></li>
             {%- endif %}
           </ul>
           {%- else -%}&mdash;{%- endif -%}
         </td>
-      </tr>
-    {%- endfor %}
-    </tbody>
-  </table>
-</div>
-{% else %}&mdash;{% endif %}</td>
-        <td>{% if c.cv and c.cv != "" %}<a href="{{ c.cv }}">CV<span class="visually-hidden"> for {{ c.name }}</span></a>{% else %}&mdash;{% endif %}</td>
       </tr>
     {%- endfor %}
     </tbody>
