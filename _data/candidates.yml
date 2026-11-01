@@ -2,26 +2,201 @@
 # Job candidates registered for this edition.
 #
 # Candidates register for the workshop; the organizers add them here.
-# Paste a new block per candidate, commit, push.
+# Keep the list alphabetical by last name — the page says it is.
 #
 # Each entry:
-#   name         – required
-#   affiliation  – required (university, lab, or company)
-#   seeking      – free text, e.g. "Academia", "Industry", "Industry / Postdoc",
-#                  "Research labs". Shown as a tag.
-#   cv           – optional URL. Omit and the cell shows "—".
-#   website      – optional personal homepage
-#   research     – optional one-line research summary
+#   name                – required
+#   role                – e.g. "PhD student", "Postdoc". Small line under the name.
+#   affiliation         – required (university, lab, or company)
+#   areas               – list of research areas. Each is drawn as a coloured
+#                         box; the colour comes from .area--<slug> in
+#                         style.css, and an area with no rule there falls back
+#                         to a neutral grey box.
+#   seeking             – list of positions, e.g. "Industry", "Research faculty"
+#   market              – when they go on the market, e.g. "2026 (this cycle)"
+#   grad                – expected graduation, e.g. "Jul 2027"
+#   cv                  – optional URL. Omit and the cell shows "—".
+#   research_statement  – optional URL, listed right after the CV
+#   teaching_statement  – optional URL, listed right after the CV
+#   website             – optional personal homepage; links the name
 #
-# While this list is empty the page shows a "not published yet" panel rather
-# than an empty table.
+# Only list material the candidate agreed to make public.
 # ---------------------------------------------------------------------------
 
-# Copy this shape for each registered candidate:
-#
-# - name: Ada Lovelace
-#   affiliation: University of Virginia
-#   seeking: Academia
-#   cv: https://example.org/ada-cv.pdf
-#   website: https://example.org/ada
-#   research: Analytical engines, compiler design, and program semantics.
+- name: "Yeganeh Aghamohammadi"
+  role: "PhD student"
+  affiliation: "University of California, Santa Barbara"
+  areas:
+    - "GPU Microarch"
+    - "Verification"
+    - "ML Accelerators"
+    - "Quantum"
+    - "PL/SW Support"
+    - "Hardware Security"
+  seeking:
+    - "Academic postdoc"
+    - "Industry postdoc"
+    - "Research faculty"
+    - "Industry"
+    - "Startup"
+  market: "2026 (this cycle)"
+  grad: "Dec 2026"
+  cv: "https://drive.google.com/open?id=1VkYtYfe1jgjyv6eJHKa3DnyBfhE47mwV"
+  research_statement: "https://drive.google.com/open?id=1dWSKGty7MtYD-9C-XJOSggoltUSxSirt"
+  teaching_statement: "https://drive.google.com/open?id=1Q3rDHsV2RhlHwnREw71fUNU3hTyhBOtu"
+
+- name: "Zihang Chen"
+  role: "PhD student"
+  affiliation: "HKUST (Guangzhou)"
+  areas:
+    - "CPU Microarch"
+    - "GPU Microarch"
+  seeking:
+    - "Industry postdoc"
+    - "Industry"
+    - "Startup"
+  market: "2027"
+  grad: "Jul 2027"
+  cv: "https://drive.google.com/open?id=10juZKqDgidYnGDNG56RQWGtSOTF9GB_C"
+
+- name: "Luca Colagrande"
+  role: "PhD student"
+  affiliation: "ETH Zurich"
+  areas:
+    - "CPU Microarch"
+    - "Interconnects"
+    - "ML Accelerators"
+    - "PL/SW Support"
+  seeking:
+    - "Academic postdoc"
+    - "National labs"
+    - "Industry"
+    - "Startup"
+  market: "2027"
+  grad: "Jan 2027"
+  cv: "https://drive.google.com/open?id=1sVK7unnOtiJjb33iRS4iojngW4PJVxJg"
+
+- name: "Pranjali Jain"
+  role: "PhD student"
+  affiliation: "University of California, Santa Barbara"
+  areas:
+    - "Datacenter"
+    - "Sustainability"
+    - "ML Accelerators"
+  seeking:
+    - "Academic postdoc"
+    - "Industry postdoc"
+    - "Research faculty"
+    - "Teaching faculty"
+    - "Industry"
+  market: "2026 (this cycle)"
+  grad: "Aug 2027"
+  cv: "https://drive.google.com/open?id=1fD4aZR9yevDn_ySQq3MfCmfGC2BJ7bsm"
+
+- name: "Rutwik Jain"
+  role: "PhD student"
+  affiliation: "University of Wisconsin-Madison"
+  areas:
+    - "Datacenter"
+  seeking:
+    - "Academic postdoc"
+    - "Research faculty"
+  market: "2026 (this cycle)"
+  grad: "May 2027"
+  cv: "https://drive.google.com/open?id=1Hi7KLpnOZo-p0ei_ekfkXtTOaYOKtAp4"
+
+- name: "Varun Manjunath"
+  role: "PhD student"
+  affiliation: "University of Southern California"
+  areas:
+    - "GPU Microarch"
+    - "ML Accelerators"
+    - "PL/SW Support"
+    - "Wafer-scale"
+  seeking:
+    - "Industry"
+    - "Startup"
+  market: "2030"
+  grad: "May 2030"
+  cv: "https://drive.google.com/open?id=1nNYA1tOyKRmfCXjVSgU1sDgJkngi0Q3C"
+
+- name: "August Ning"
+  role: "Postdoc"
+  affiliation: "EPFL"
+  areas:
+    - "CPU Microarch"
+    - "Datacenter"
+    - "Sustainability"
+    - "Architecture & Policy"
+  seeking:
+    - "Research faculty"
+    - "Industry"
+  market: "2026 (this cycle)"
+  grad: "May 2025"
+  cv: "https://drive.google.com/open?id=1-MnXO-AmmoA2i68DPq-XXSpt_95fT4Yj"
+
+- name: "Le Qin"
+  role: "PhD student"
+  affiliation: "HKUST (Guangzhou)"
+  areas:
+    - "Interconnects"
+    - "ML Accelerators"
+    - "Wafer-scale"
+    - "ML Systems"
+  seeking:
+    - "Academic postdoc"
+    - "Industry postdoc"
+    - "National labs"
+    - "Research faculty"
+    - "Industry"
+  market: "2027"
+  grad: "Jul 2027"
+  cv: "https://drive.google.com/open?id=1SA0RgPPorhJKDBfrAtdqnmPjcs10Z9-R"
+
+- name: "Varunaditya Venkatesan"
+  role: "PhD student"
+  affiliation: "North Carolina State University"
+  areas:
+    - "CPU Microarch"
+    - "GPU Microarch"
+    - "Verification"
+    - "Non-ML Accelerators"
+    - "ML Accelerators"
+    - "Memory & Storage"
+  seeking:
+    - "Industry"
+    - "Startup"
+  market: "2027"
+  grad: "May 2027"
+  cv: "https://drive.google.com/open?id=1xmkLOdpGTphNqx6VKxP6nM224wPOBWtg"
+
+- name: "Ryan Wong"
+  role: "PhD student"
+  affiliation: "University of Illinois Urbana-Champaign"
+  areas:
+    - "Non-ML Accelerators"
+    - "ML Accelerators"
+    - "Memory & Storage"
+  seeking:
+    - "Research faculty"
+  market: "2026 (this cycle)"
+  grad: "May 2027"
+  cv: "https://drive.google.com/open?id=1dLbWLZRZ8m-5fnCmtXr19keKnU-esh3c"
+
+- name: "Qijun Zhang"
+  role: "PhD student"
+  affiliation: "HKUST"
+  areas:
+    - "CPU Microarch"
+    - "GPU Microarch"
+    - "Interconnects"
+    - "ML Accelerators"
+    - "PL/SW Support"
+    - "Wafer-scale"
+  seeking:
+    - "Academic postdoc"
+    - "Industry postdoc"
+    - "Industry"
+  market: "2026 (this cycle)"
+  grad: "Jun 2027"
+  cv: "https://drive.google.com/open?id=1ZdW4mDvzpR9pbuxvbWu670Bg-QqsRvTM"
