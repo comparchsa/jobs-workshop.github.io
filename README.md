@@ -4,7 +4,7 @@ Source for the JOBS Workshop, a workshop for computer
 architecture PhD students and postdocs going on the job market, co-located with
 MICRO.
 
-**Live site:** <https://comparchsa.github.io/jobs-workshop.github.io/>
+**Live site:** <https://www.comparchsa.org/jobs-workshop.github.io/>
 
 A plain [Jekyll](https://jekyllrb.com/) site built by GitHub Pages. All site documentation lives in this file.
 
@@ -234,10 +234,13 @@ page:
 https://comparchsa.github.io/jobs-workshop.github.io/
 ```
 
-which is why `_config.yml` sets:
+GitHub redirects that address to the organization's custom domain, so the
+canonical address is
+`https://www.comparchsa.org/jobs-workshop.github.io/`, which is why
+`_config.yml` sets:
 
 ```yaml
-url:     https://comparchsa.github.io
+url:     https://www.comparchsa.org
 baseurl: /jobs-workshop.github.io
 ```
 

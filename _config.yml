@@ -15,7 +15,7 @@ description: >-
 #   url     = scheme + host, no trailing slash
 #   baseurl = the sub-path, with a leading slash and no trailing slash
 #             (set baseurl to "" if you later move to a custom domain)
-url: https://comparchsa.github.io
+url: https://www.comparchsa.org
 baseurl: /jobs-workshop.github.io
 
 lang: en-US
