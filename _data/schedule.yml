@@ -36,7 +36,7 @@
   description: >-
   people:
     - name: Jovan Stojkovic
-      role: Assistant Professor		
+      role: Assistant Professor
       affiliation: University of Texas at Austin
       photo: /assets/img/speakers/jovan-stojkovic.jpg
     - name: Chris Kjellqvist
@@ -75,7 +75,7 @@
   title: "Panel 2: Architecture Globally"
   description: >-
   people:
-    - name: Aamer Jaleel  	 
+    - name: Aamer Jaleel
       role: Distinguished Research Scientist
       affiliation: NVIDIA Research
       photo: /assets/img/speakers/aamer-jaleel.jpg

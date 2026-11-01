@@ -13,7 +13,7 @@ permalink: /organizers/
 
 ## Contact
 
-For questions about the program, the JOBS candidate application, or accessibility accomodations, please contact:
+For questions about the program, the JOBS candidate application, or accessibility accommodations, please contact:
 {% include contact.html %}
 
 ## Code of Conduct

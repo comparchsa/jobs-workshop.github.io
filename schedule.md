@@ -25,8 +25,8 @@ permalink: /schedule/
   <li class="slot slot--{{ slot.kind | default: 'session' }}">
     <div class="slot-time">
       {%- if slot.start and slot.start != "" -%}
-      <time datetime="{{ w.date_iso }}T{{ slot.start }}">{{ slot.start }}</time>
-      {%- if slot.end and slot.end != "" %}<span class="slot-end"><span class="visually-hidden"> to </span><time datetime="{{ w.date_iso }}T{{ slot.end }}">{{ slot.end }}</time></span>{% endif %}
+      <time datetime="{{ w.date_iso | append: ' ' | append: slot.start | date: '%Y-%m-%dT%H:%M' }}">{{ slot.start }}</time>
+      {%- if slot.end and slot.end != "" %}<span class="slot-end"><span class="visually-hidden"> to </span><time datetime="{{ w.date_iso | append: ' ' | append: slot.end | date: '%Y-%m-%dT%H:%M' }}">{{ slot.end }}</time></span>{% endif %}
       {%- endif -%}
     </div>
     <div class="slot-body">

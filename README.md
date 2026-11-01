@@ -31,56 +31,68 @@ Every one of those files opens with a comment block explaining its fields.
 
 ---
 
-## Things to fill in before publishing
+## Things to check before publishing
 
-The site is complete but a few values are placeholders:
-
-- **`contact_email`** in `_data/workshop.yml` is the literal string
-  `<placeholder>`. Until it contains an `@`, the site prints it as plain text
-  in a dashed box rather than a mailto link, so no dead address is published.
-  Put the real address in and every occurrence becomes a working link on its
-  own — see [`_includes/contact.html`](_includes/contact.html).
-- **`submission.url`** is empty. Paste the HotCRP URL when the site is live.
-- **`important_dates`** are all `TBD` except the workshop date itself.
-- **Schedule speakers** are all `TBD`.
-- **`venue_room`** is `TBD` until MICRO assigns it.
+- **`contact_email`** in `_data/workshop.yml` must contain an `@`. Until it
+  does, the site prints it as plain text rather than a mailto link — see
+  [`_includes/contact.html`](_includes/contact.html).
+- **`submission.url`** is the Google Form candidates register with. The button
+  turns into a greyed-out "opens soon" chip while it is empty.
+- **`important_dates`** — any row whose date is `TBD` is collapsed into one
+  "To be announced" line on the home page.
+- **Candidate documents** — every CV and statement linked from
+  `_data/candidates.yml` is a Google Drive file that must be shared as
+  "Anyone with the link can view", or visitors land on a sign-in page.
 
 ---
 
 ## Common tasks
 
-### Turn on the job-candidate application
+### Change the job-candidate registration link
 
-Applications run through HotCRP. In [`_data/workshop.yml`](_data/workshop.yml):
+In [`_data/workshop.yml`](_data/workshop.yml):
 
 ```yaml
 submission:
-  label: "Apply as a job candidate"
-  url: "https://jobs2026.hotcrp.com/"
-  hotcrp_name: "jobs2026.hotcrp.com"
+  label: "Register as a JOBS candidate"
+  url: "https://forms.gle/..."
 ```
 
-While `url` is empty the button renders as a greyed-out "opens soon" chip
-instead of a dead link, so it is always safe to ship the page before HotCRP
-exists. Fill in the matching deadlines under `important_dates` at the same time.
+Update the matching deadlines under `important_dates` at the same time.
 
-### Publish the selected candidates
+### Publish the registered candidates
 
-After selection, add a block per candidate to
-[`_data/candidates.yml`](_data/candidates.yml):
+Add a block per candidate to
+[`_data/candidates.yml`](_data/candidates.yml), alphabetical by last name.
+Copy affiliation and role exactly as the candidate entered them, and list only
+the material they agreed to make public:
 
 ```yaml
-- name: Ada Lovelace
-  affiliation: University of Virginia
-  seeking: Academia          # free text; shown as a tag
-  cv: https://example.org/ada-cv.pdf
-  website: https://example.org/ada                     # optional
-  research: Analytical engines and compiler design.    # optional, one line
+- name: "Ada Lovelace"
+  role: "PhD student"
+  affiliation: "University of Virginia"
+  areas:                      # shown as coloured boxes, sorted A–Z by the page
+    - "CPU Microarch"
+    - "ML Accelerators"
+  seeking:                    # shown as outlined tags
+    - "Research faculty"
+    - "Industry"
+  market: "2026 (this cycle)"
+  grad: "May 2027"
+  cv: "https://drive.google.com/open?id=..."
+  research_statement: "https://drive.google.com/open?id=..."   # optional
+  teaching_statement: "https://drive.google.com/open?id=..."   # optional
+  website: "https://example.org/ada"                            # optional
 ```
 
+Each area gets its colour from an `.area--<slug>` rule in
+[`assets/css/style.css`](assets/css/style.css) (the slug is the lower-cased
+area with punctuation turned into hyphens). An area with no rule shows as a
+grey box, so a new one needs a rule only if you want a colour for it.
+
 Commit and push. The table on `/candidates/` picks it up automatically. While
-the list is empty the page shows a "not published yet" panel rather than an
-empty table.
+the list is empty the page shows a "Registered candidates will be listed here"
+panel rather than an empty table.
 
 ### Confirm a speaker or panelist
 
@@ -257,7 +269,7 @@ _layouts/
   page.html            default.html + the page title band
 index.html             home page (hero + sections)
 schedule.md            timeline rendered from _data/schedule.yml
-candidates.md          how to apply + table from _data/candidates.yml
+candidates.md          intro + candidate table from _data/candidates.yml
 organizers.md          committee grid, panelist nominations, contact
 past-editions.md       archive from _data/past_editions.yml (footer link only)
 404.html               shown for any unknown URL
