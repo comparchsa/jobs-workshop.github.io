@@ -28,11 +28,11 @@
   affiliation: "University of California, Santa Barbara"
   areas:
     - "GPU Microarch"
-    - "Verification"
-    - "ML Accelerators"
-    - "Quantum"
-    - "PL/SW Support"
     - "Hardware Security"
+    - "ML Accelerators"
+    - "PL/SW Support"
+    - "Quantum"
+    - "Verification"
   seeking:
     - "Academic postdoc"
     - "Industry postdoc"
@@ -47,7 +47,7 @@
 
 - name: "Zihang Chen"
   role: "PhD student"
-  affiliation: "HKUST (Guangzhou)"
+  affiliation: "The Hong Kong University of Science and Technology (Guangzhou)"
   areas:
     - "CPU Microarch"
     - "GPU Microarch"
@@ -78,11 +78,11 @@
 
 - name: "Pranjali Jain"
   role: "PhD student"
-  affiliation: "University of California, Santa Barbara"
+  affiliation: "University of California Santa Barbara"
   areas:
     - "Datacenter"
-    - "Sustainability"
     - "ML Accelerators"
+    - "Sustainability"
   seeking:
     - "Academic postdoc"
     - "Industry postdoc"
@@ -121,13 +121,13 @@
   cv: "https://drive.google.com/open?id=1nNYA1tOyKRmfCXjVSgU1sDgJkngi0Q3C"
 
 - name: "August Ning"
-  role: "Postdoc"
+  role: "Postdoctoral researcher"
   affiliation: "EPFL"
   areas:
+    - "Architecture & Policy"
     - "CPU Microarch"
     - "Datacenter"
     - "Sustainability"
-    - "Architecture & Policy"
   seeking:
     - "Research faculty"
     - "Industry"
@@ -137,12 +137,12 @@
 
 - name: "Le Qin"
   role: "PhD student"
-  affiliation: "HKUST (Guangzhou)"
+  affiliation: "The Hong Kong University of Science and Technology (Guangzhou)"
   areas:
     - "Interconnects"
     - "ML Accelerators"
-    - "Wafer-scale"
     - "ML Systems"
+    - "Wafer-scale"
   seeking:
     - "Academic postdoc"
     - "Industry postdoc"
@@ -154,15 +154,15 @@
   cv: "https://drive.google.com/open?id=1SA0RgPPorhJKDBfrAtdqnmPjcs10Z9-R"
 
 - name: "Varunaditya Venkatesan"
-  role: "PhD student"
+  role: "Senior Graduate Student"
   affiliation: "North Carolina State University"
   areas:
     - "CPU Microarch"
     - "GPU Microarch"
-    - "Verification"
-    - "Non-ML Accelerators"
-    - "ML Accelerators"
     - "Memory & Storage"
+    - "ML Accelerators"
+    - "Non-ML Accelerators"
+    - "Verification"
   seeking:
     - "Industry"
     - "Startup"
@@ -174,9 +174,9 @@
   role: "PhD student"
   affiliation: "University of Illinois Urbana-Champaign"
   areas:
-    - "Non-ML Accelerators"
-    - "ML Accelerators"
     - "Memory & Storage"
+    - "ML Accelerators"
+    - "Non-ML Accelerators"
   seeking:
     - "Research faculty"
   market: "2026 (this cycle)"
@@ -185,7 +185,7 @@
 
 - name: "Qijun Zhang"
   role: "PhD student"
-  affiliation: "HKUST"
+  affiliation: "The Hong Kong University of Science and Technology"
   areas:
     - "CPU Microarch"
     - "GPU Microarch"

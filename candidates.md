@@ -13,13 +13,11 @@ header_cta: true
 {% assign candidates = site.data.candidates %}
 {% assign candidate_count = candidates | size %}
 
-To advertise yourself on this page, please register as a JOBS candidate above. The candidate list will remain online after the conference. 
-
+To advertise yourself on this page, please register as a JOBS candidate above. The candidate list will remain online after the conference.
 If you are recruiting and attending MICRO-59, please come meet candidates during the
-Coffee Break at 10:00 am, and the mini-workshop session at 11:30 am (see [schedule]({{ '/schedule/' | relative_url }})). 
+Coffee Break at 10:00 am, and the mini-workshop session at 11:30 am (see [schedule]({{ '/schedule/' | relative_url }})).
 
-Candidates are listed alphabetically by last name; the order is not a ranking.
-
+Candidates are listed alphabetically by last name.
 To update or remove an entry, please contact the organizers at
 {% include contact.html %}.
 
@@ -59,7 +57,7 @@ focusable, so it is announced rather than landed on silently.
         <td>
           {%- if c.areas and c.areas.size > 0 -%}
           <ul class="tag-list">
-            {%- for a in c.areas %}<li class="area area--{{ a | slugify }}">{{ a }}</li>{% endfor %}
+            {%- assign areas = c.areas | sort_natural %}{%- for a in areas %}<li class="area area--{{ a | slugify }}">{{ a }}</li>{% endfor %}
           </ul>
           {%- else -%}&mdash;{%- endif -%}
         </td>
