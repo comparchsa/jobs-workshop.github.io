@@ -774,6 +774,9 @@ tbody tr:hover { background: var(--bg-soft); }
 .area--datacenter           { background: #ffedd5; color: #9a3412; }
 .area--sustainability       { background: #d1fae5; color: #065f46; }
 .area--memory-storage       { background: #fce7f3; color: #9d174d; }
+.area--hpc                  { background: #ffe4e6; color: #9f1239; }
+.area--crypto-accelerators  { background: #fef9c3; color: #854d0e; }
+.area--chiplets             { background: #fae8ff; color: #86198f; }
 
 .candidates .pill {
   font-size: .75rem;

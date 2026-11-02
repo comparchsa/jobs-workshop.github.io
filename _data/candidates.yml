@@ -76,6 +76,26 @@
   grad: "Jan 2027"
   cv: "https://drive.google.com/open?id=1sVK7unnOtiJjb33iRS4iojngW4PJVxJg"
 
+- name: "Alhad Daftardar"
+  role: "PhD student"
+  affiliation: "New York University"
+  areas:
+    - "Chiplets"
+    - "Crypto Accelerators"
+    - "Datacenter"
+    - "ML Accelerators"
+    - "Non-ML Accelerators"
+    - "PL/SW Support"
+    - "Verification"
+  seeking:
+    - "Academic postdoc"
+    - "Industry postdoc"
+    - "Industry"
+    - "Startup"
+  market: "2027"
+  grad: "May 2028"
+  cv: "https://drive.google.com/open?id=1Z1yryZaVovlBu28UpEruNktvizuKl508"
+
 - name: "Pranjali Jain"
   role: "PhD student"
   affiliation: "University of California Santa Barbara"
@@ -98,6 +118,10 @@
   affiliation: "University of Wisconsin-Madison"
   areas:
     - "Datacenter"
+    - "GPU Microarch"
+    - "HPC"
+    - "ML Accelerators"
+    - "Non-ML Accelerators"
   seeking:
     - "Academic postdoc"
     - "Research faculty"
